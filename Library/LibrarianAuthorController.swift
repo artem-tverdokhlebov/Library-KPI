@@ -73,6 +73,7 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         
         authors = [Author]()
 

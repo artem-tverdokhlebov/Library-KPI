@@ -12,11 +12,11 @@
 @property (nonatomic) NSString *title;
 @property (nonatomic) int bookID;
 @property (nonatomic) int inventoryNumber;
-@property (nonatomic) int authorID;
-@property (nonatomic) int themeID;
 @property (nonatomic) NSString *udk;
 @property (nonatomic) int cardID;
 
 -(void)parseFromDictionary:(NSDictionary *) dictionary;
 -(void)deleteFromDataBase;
 @end
+
+//TODO: getAuthors() -> [Author]

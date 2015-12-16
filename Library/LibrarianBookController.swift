@@ -66,8 +66,12 @@ class LibrarianBookController : UITableViewController {
         }
     }
     
-    func sayHello(sender: UIBarButtonItem) {
-        print("Yo")
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.destinationViewController is LibrarianShowBookController) {
+            let destination = segue.destinationViewController as! LibrarianShowBookController
+            
+            destination.passBook(books[tableView.indexPathForSelectedRow!.row])
+        }
     }
     
     override func viewDidLoad() {

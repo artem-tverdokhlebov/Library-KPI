@@ -16,4 +16,17 @@ import Foundation
         self.theme_id = Int(dictionary["id"] as! String)!
         self.title = dictionary["title"] as! String
     }
+    
+    func getBooks() -> [Book] {
+        var books : [Book] = [Book]()
+        let data : NSArray = DB.query("SELECT book.* FROM bookTheme INNER JOIN book ON bookTheme.book_id = book.id WHERE theme_id = \(theme_id)")
+        
+        for item in data {
+            let book : Book = Book()
+            book.parseFromDictionary(item as! [NSObject : AnyObject])
+            books.append(book)
+        }
+        
+        return books
+    }
 }

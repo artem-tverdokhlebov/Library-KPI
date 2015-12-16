@@ -83,7 +83,6 @@ class LibrarianSearchController : UIViewController, UITableViewDataSource, UITab
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         searchBar.delegate = self
     
         searchType.addTarget(self, action: "typeSelected:", forControlEvents: UIControlEvents.ValueChanged)

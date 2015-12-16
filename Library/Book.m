@@ -15,8 +15,6 @@
     self.bookID =[dictionary[@"id"] intValue];
     self.inventoryNumber = [dictionary[@"inventoryValue"] intValue];
     self.title = dictionary[@"title"];
-    self.authorID = [dictionary[@"author_id"] intValue];
-    self.themeID = [dictionary[@"theme_id"] intValue];
     self.udk = dictionary[@"udk"];
     self.cardID = [dictionary[@"card_id"] intValue];;
 }

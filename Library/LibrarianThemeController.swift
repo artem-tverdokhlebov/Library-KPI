@@ -73,6 +73,7 @@ class LibrarianThemeController : UITableViewController, UISearchBarDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
         
         themes = [Theme]()
         
