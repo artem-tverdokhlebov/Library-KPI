@@ -67,8 +67,6 @@
         [book parseFromDictionary:(NSDictionary *)item];
         [self.books addObject:book];
     }
-
-    
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{

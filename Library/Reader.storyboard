@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="91J-Hu-RGP">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Авторы-->
+        <scene sceneID="beD-85-Q2d">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5y9-lp-NBC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="lgt-md-w0Z" customClass="ReaderAuthorController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7tU-YE-nHq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clientAuthorCell" textLabel="rGh-u7-REI" style="IBUITableViewCellStyleDefault" id="weB-ue-IXe">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="weB-ue-IXe" id="TOi-BT-6kh">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rGh-u7-REI">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZpP-De-CHt" kind="show" id="vEX-dB-IrN">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lgt-md-w0Z" id="bsv-Os-t0E"/>
+                            <outlet property="delegate" destination="lgt-md-w0Z" id="ri1-5d-PaS"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Авторы" id="rhd-gi-MJD"/>
+                    <navigationItem key="navigationItem" id="gB4-vJ-Ugv"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-1339" y="1754"/>
+        </scene>
+        <!--Reader Book For Request Controller-->
+        <scene sceneID="pmU-3z-k7X">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8lW-Y7-3h5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="ZpP-De-CHt" customClass="ReaderBookForRequestController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ge8-Ox-oFY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clientBookCell" textLabel="p1W-0Z-lzH" style="IBUITableViewCellStyleDefault" id="lka-Ff-aZ1">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lka-Ff-aZ1" id="hmU-ny-2aS">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p1W-0Z-lzH">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ZpP-De-CHt" id="v0P-ip-flh"/>
+                            <outlet property="delegate" destination="ZpP-De-CHt" id="MZY-x1-dbd"/>
+                        </connections>
+                    </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-1710" y="2530"/>
+        </scene>
+        <!--Темы-->
+        <scene sceneID="x2I-b4-HBx">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ga-Qb-hjH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="c8U-30-sXC" customClass="ReaderThemeController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="anI-bW-pMx">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="clientThemeCell" textLabel="Cch-0Y-tlZ" style="IBUITableViewCellStyleDefault" id="iSu-qc-IYE">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iSu-qc-IYE" id="ovR-e1-YvD">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cch-0Y-tlZ">
+                                            <rect key="frame" x="15" y="0.0" width="550" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZpP-De-CHt" kind="show" id="73X-lV-UOt">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="c8U-30-sXC" id="YU1-av-u2i"/>
+                            <outlet property="delegate" destination="c8U-30-sXC" id="Epz-mS-L9u"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Темы" id="iUq-pQ-cRM"/>
+                    <navigationItem key="navigationItem" id="HYE-jg-UM3"/>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-2063" y="1754"/>
+        </scene>
+        <!--Books-->
+        <scene sceneID="CV1-dE-2DJ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMW-Ec-LPn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController title="Books" id="ORP-fb-3HY" customClass="ReaderBookController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jvK-Lp-j0n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск книги" id="boy-YY-3Dx">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clientBookCell" textLabel="hcK-XY-qon" style="IBUITableViewCellStyleDefault" id="CgT-L7-lq3">
+                                <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CgT-L7-lq3" id="8ta-xq-KT5">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcK-XY-qon">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="43"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ORP-fb-3HY" id="ulp-Ho-MBQ"/>
+                            <outlet property="delegate" destination="ORP-fb-3HY" id="T9Y-aU-SQu"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Книги" id="1p6-LH-tEM"/>
+                    <connections>
+                        <outlet property="searchBar" destination="boy-YY-3Dx" id="2Gf-pL-L5B"/>
+                    </connections>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-611" y="1754"/>
+        </scene>
+        <!--Читатель-->
+        <scene sceneID="1LT-ef-isp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laV-ZM-QZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController title="Читатель" id="91J-Hu-RGP" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="iQz-AF-LQF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ORP-fb-3HY" kind="relationship" relationship="viewControllers" id="6dQ-bx-awZ"/>
+                        <segue destination="lgt-md-w0Z" kind="relationship" relationship="viewControllers" id="LnW-OC-2iD"/>
+                        <segue destination="c8U-30-sXC" kind="relationship" relationship="viewControllers" id="ObO-5N-RBc"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="-1259" y="815"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="73X-lV-UOt"/>
+    </inferredMetricsTieBreakers>
+</document>

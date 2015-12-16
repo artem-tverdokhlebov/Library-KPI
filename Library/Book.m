@@ -18,4 +18,5 @@
     self.udk = dictionary[@"udk"];
     self.cardID = [dictionary[@"card_id"] intValue];;
 }
+// TODO: метод для удаления из базы
 @end

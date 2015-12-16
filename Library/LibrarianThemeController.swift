@@ -31,6 +31,20 @@ class LibrarianThemeController : UITableViewController, UISearchBarDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
+            //themes[indexPath.row].dbDelete()
+        })
+        
+        deleteAction.backgroundColor = UIColor.redColor()
+        
+        return [deleteAction]
+    }
+    
     func getResultsByTitle(query : String) {
         if(query != "") {
             data = DB.query("SELECT * FROM theme WHERE title LIKE '%" + query + "%'")

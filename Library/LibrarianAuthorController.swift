@@ -31,6 +31,20 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
+            //authors[indexPath.row].dbDelete()
+        })
+        
+        deleteAction.backgroundColor = UIColor.redColor()
+        
+        return [deleteAction]
+    }
+    
     func getResultsByName(query : String) {
         if(query != "") {
             data = DB.query("SELECT * FROM author WHERE name LIKE '%" + query + "%'")
@@ -67,7 +81,6 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
         for item in data {
             let author : Author = Author()
             author.parseFromDictionary(item as! [NSObject : AnyObject])
-            print(author)
             authors.append(author)
         }
         

@@ -29,12 +29,27 @@ class LibrarianBookController : UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
+            //books[indexPath.row].dbDelete()
+        })
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        deleteAction.backgroundColor = UIColor.redColor()
         
+        return [deleteAction]
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadBooks()
+        
+        tableView.reloadData()
+    }
+    
+    func loadBooks() {
         books = [Book]()
         
         data = DB.query("SELECT * FROM book")
@@ -45,7 +60,27 @@ class LibrarianBookController : UITableViewController {
             books.append(book)
         }
         
-        tableView.reloadData()
+        if self.refreshControl!.refreshing
+        {
+            self.refreshControl!.endRefreshing()
+        }
+    }
+    
+    func sayHello(sender: UIBarButtonItem) {
+        print("Yo")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "sayHello"), UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "sayHello")]
+ 
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        
+        loadBooks()
     }
 
 }
