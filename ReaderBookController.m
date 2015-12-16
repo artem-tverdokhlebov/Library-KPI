@@ -9,12 +9,13 @@
 #import "ReaderBookController.h"
 #import "Book.h"
 #import "Library-Swift.h"
-@interface ReaderBookController ()
+@interface ReaderBookController () <UISearchBarDelegate>
 @property (nonatomic) NSArray *data;
 @property (nonatomic) NSMutableArray <Book *> *books;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
-@implementation ReaderBookController
+@implementation ReaderBookController 
 - (NSMutableArray<Book *> *)books{
     if(!_books){
         _books = [@[] mutableCopy];
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.searchBar.delegate = self;
     
     self.data = [DB query:@"SELECT * FROM book"];
     for (NSObject *item in self.data) {
@@ -37,6 +39,8 @@
     }
      [self.tableView reloadData];
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"clientBookCell" forIndexPath:indexPath];
@@ -51,5 +55,26 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+-(void)getResultsByTitle:(NSString *)title{
+    if(title){
+        self.data = [DB query:[NSString stringWithFormat:@"SELECT * FROM book WHERE title LIKE ' %@ '",title]];
+    } else {
+        self.data = [DB query:@"SELECT * FROM book"];
+
+    }
+    for (NSObject *item in self.data) {
+        Book *book = [Book new];
+        [book parseFromDictionary:(NSDictionary *)item];
+        [self.books addObject:book];
+    }
+
+    
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self getResultsByTitle:self.searchBar.text];
+    
+    [self.tableView reloadData];
+}
 
 @end

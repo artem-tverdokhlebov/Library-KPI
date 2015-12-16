@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2654631C21B61600B3733A /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A2654621C21B61600B3733A /* Images-2.xcassets */; };
 		3A3A8D741C1CB1E500656CCF /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A8D731C1CB1E500656CCF /* Book.m */; };
 		3A3A8D771C1CB3B200656CCF /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A8D761C1CB3B200656CCF /* Card.m */; };
 		3A3A8D7A1C1CB49E00656CCF /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A8D791C1CB49E00656CCF /* Ticket.m */; };
@@ -16,7 +17,6 @@
 		3A4E66161C1CA5780008E7F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E66151C1CA5780008E7F8 /* AppDelegate.m */; };
 		3A4E66191C1CA5780008E7F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E66181C1CA5780008E7F8 /* ViewController.m */; };
 		3A4E661C1C1CA5780008E7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E661A1C1CA5780008E7F8 /* Main.storyboard */; };
-		3A4E661E1C1CA5780008E7F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E661D1C1CA5780008E7F8 /* Assets.xcassets */; };
 		3A4E66211C1CA5780008E7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E661F1C1CA5780008E7F8 /* LaunchScreen.storyboard */; };
 		3A6C712B1C1D9A94004BBE35 /* ReaderThemeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C712A1C1D9A94004BBE35 /* ReaderThemeController.m */; };
 		3A6C71311C1D9E91004BBE35 /* ReaderBookForRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C71301C1D9E91004BBE35 /* ReaderBookForRequestController.m */; };
@@ -33,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2654621C21B61600B3733A /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 		3A3A8D721C1CB1E500656CCF /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		3A3A8D731C1CB1E500656CCF /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		3A3A8D751C1CB3B200656CCF /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Card.h; path = ../Card.h; sourceTree = "<group>"; };
@@ -50,7 +51,6 @@
 		3A4E66171C1CA5780008E7F8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		3A4E66181C1CA5780008E7F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A4E661B1C1CA5780008E7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3A4E661D1C1CA5780008E7F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A4E66201C1CA5780008E7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4E66221C1CA5780008E7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A6C71291C1D9A94004BBE35 /* ReaderThemeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderThemeController.h; path = ../ReaderThemeController.h; sourceTree = "<group>"; };
@@ -107,9 +107,9 @@
 				3A4E66141C1CA5780008E7F8 /* AppDelegate.h */,
 				3A4E66151C1CA5780008E7F8 /* AppDelegate.m */,
 				AC31ED1D1C1CA5AF00AF5BB8 /* Library-Bridging-Header.h */,
-				3A4E661D1C1CA5780008E7F8 /* Assets.xcassets */,
 				3A4E661F1C1CA5780008E7F8 /* LaunchScreen.storyboard */,
 				3A4E66221C1CA5780008E7F8 /* Info.plist */,
+				3A2654621C21B61600B3733A /* Images-2.xcassets */,
 				3A4E66111C1CA5780008E7F8 /* Supporting Files */,
 			);
 			path = Library;
@@ -230,8 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A2654631C21B61600B3733A /* Images-2.xcassets in Resources */,
 				3A4E66211C1CA5780008E7F8 /* LaunchScreen.storyboard in Resources */,
-				3A4E661E1C1CA5780008E7F8 /* Assets.xcassets in Resources */,
 				3A4E661C1C1CA5780008E7F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

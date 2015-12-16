@@ -271,9 +271,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Поиск книги" id="SK6-Rw-4iR">
+                            <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="clientBookCell" textLabel="EKD-tn-MBJ" style="IBUITableViewCellStyleDefault" id="dFe-gf-AFC">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="136" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dFe-gf-AFC" id="Ylz-tZ-dCy">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -296,6 +301,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Книги" id="Bsu-ro-HUZ"/>
+                    <connections>
+                        <outlet property="searchBar" destination="SK6-Rw-4iR" id="nnj-6H-czv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JxE-93-HCP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -617,13 +625,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcj-xi-fvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="871"/>
+            <point key="canvasLocation" x="117" y="1031"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="5Yd-tL-RWI"/>
         <segue reference="WdF-j5-551"/>
+        <segue reference="5Yd-tL-RWI"/>
         <segue reference="YWp-Bu-n2u"/>
-        <segue reference="Oyu-La-0Xd"/>
+        <segue reference="y4H-pY-aGZ"/>
     </inferredMetricsTieBreakers>
 </document>
