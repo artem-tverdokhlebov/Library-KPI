@@ -43,7 +43,7 @@ class LibrarianBookController : UITableViewController {
         return [deleteAction]
     }
     
-    func refresh(sender:AnyObject) {
+    @IBAction func refresh(sender: AnyObject) {
         self.loadBooks()
         
         tableView.reloadData()
@@ -75,10 +75,6 @@ class LibrarianBookController : UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        //navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "sayHello"), UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "sayHello")]
- 
-        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         
         loadBooks()
     }

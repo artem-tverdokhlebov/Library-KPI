@@ -7,8 +7,10 @@
 //
 
 #import "Book.h"
-
+#import "Library-Swift.h"
 @implementation Book
+
+
 -(void)parseFromDictionary:(NSDictionary *)dictionary{
     self.bookID =[dictionary[@"id"] intValue];
     self.inventoryNumber = [dictionary[@"inventoryValue"] intValue];
@@ -18,5 +20,9 @@
     self.udk = dictionary[@"udk"];
     self.cardID = [dictionary[@"card_id"] intValue];;
 }
-// TODO: метод для удаления из базы
+
+
+-(void)deleteFromDataBase{
+    [DB query:[NSString stringWithFormat:@"DELETE FROM book WHERE id = %i",self.bookID]];
+}
 @end

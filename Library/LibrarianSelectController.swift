@@ -13,6 +13,8 @@ class LibrarianSelectController : UITableViewController {
     var data : NSArray = NSArray()
     var objects : [AnyObject] = [AnyObject]()
 
+    var selectedObjects : [AnyObject] = [AnyObject]()
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
@@ -22,10 +24,18 @@ class LibrarianSelectController : UITableViewController {
         
         if(objects[indexPath.row] is Author)  {
             cell.textLabel!.text = objects[indexPath.row].name
+            
+            if let _ = selectedObjects.indexOf({$0.name == objects[indexPath.row].name}) {
+                cell.accessoryType = .Checkmark
+            }
         }
         
         if(objects[indexPath.row] is Theme)  {
             cell.textLabel!.text = objects[indexPath.row].title
+            
+            if let _ = selectedObjects.indexOf({$0.title == objects[indexPath.row].title}) {
+                cell.accessoryType = .Checkmark
+            }
         }
         
         return cell
@@ -40,8 +50,26 @@ class LibrarianSelectController : UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //segue.destinationViewController
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        selectedObjects = [AnyObject]()
+        
+        for(var i = 0; i < tableView.numberOfRowsInSection(0); i++) {
+            if(tableView.cellForRowAtIndexPath(NSIndexPath(forRow: i, inSection: 0))?.accessoryType == .Checkmark) {
+                selectedObjects.append(objects[i])
+            }
+        }
+        
+        let destination : LibrarianAddBookController = self.navigationController!.viewControllers.last as! LibrarianAddBookController
+    
+        if(objects[0] is Author)  {
+            destination.passAuthors(selectedObjects as! [Author])
+        }
+        
+        if(objects[0] is Theme)  {
+            destination.passThemes(selectedObjects as! [Theme])
+        }
     }
     
     func loadThemes() {
@@ -70,6 +98,10 @@ class LibrarianSelectController : UITableViewController {
         }
         
         tableView.reloadData()
+    }
+    
+    func passSelected(selectedObjects : [AnyObject]) {
+        self.selectedObjects = selectedObjects
     }
     
     override func viewDidLoad() {

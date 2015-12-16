@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LibrarianAddBookController : UITableViewController {
+class LibrarianAddBookController : UITableViewController,UITextFieldDelegate {
     var authors : [Author] = [Author]()
     var themes : [Theme] = [Theme]()
     
@@ -23,10 +23,12 @@ class LibrarianAddBookController : UITableViewController {
 
         if(cell.restorationIdentifier == "Author") {
             destination.loadAuthors()
+            destination.passSelected(authors)
         }
         
         if(cell.restorationIdentifier == "Theme") {
             destination.loadThemes()
+            destination.passSelected(themes)
         }
     }
     
@@ -39,7 +41,7 @@ class LibrarianAddBookController : UITableViewController {
     }
     
     func addBook() {
-        
+        // TODO: implement
     }
     
     @IBAction func cancelButton(sender: AnyObject) {
@@ -47,7 +49,12 @@ class LibrarianAddBookController : UITableViewController {
     }
     
     @IBAction func addBook(sender: AnyObject) {
-        print("12")
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        bookTitle.resignFirstResponder()
+        return true
     }
     
     override func viewDidLoad() {
@@ -55,5 +62,6 @@ class LibrarianAddBookController : UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        bookTitle.delegate = self
     }
 }

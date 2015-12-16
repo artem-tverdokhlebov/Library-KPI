@@ -18,5 +18,5 @@
 @property (nonatomic) int cardID;
 
 -(void)parseFromDictionary:(NSDictionary *) dictionary;
-
+-(void)deleteFromDataBase;
 @end

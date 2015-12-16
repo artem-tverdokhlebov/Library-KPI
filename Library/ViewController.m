@@ -23,8 +23,6 @@
     NSArray *ar = [DB query: @"SELECT * FROM book"];
     Book *b = [Book new];
     [b parseFromDictionary:ar[0]];
-    NSLog(@"%@",ar[0]);
-    NSLog(@"%@ %@ %i", b.title, b.udk , b.inventoryNumber);
 }
 
 - (void)didReceiveMemoryWarning {
