@@ -1,5 +1,5 @@
 //
-//  ReaderBookForrequestController.h
+//  ReaderBookForRequestController.h
 //  Library
 //
 //  Created by Leonid Humeniuk on 12/13/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReaderBookForrequestController : UITableViewController
-
+@interface ReaderBookForRequestController : UITableViewController
+@property (nonatomic) NSString *query;
 @end
