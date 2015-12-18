@@ -15,11 +15,15 @@ class LibrarianAddAuthorController : UITableViewController, UITextFieldDelegate 
     @IBOutlet var authorBirthdate: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
     
-    @IBAction func cancelButtonPressed(sender: AnyObject) {
+    @IBOutlet var addButton: UIBarButtonItem!
+    
+    @IBAction func cancelButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true) { () -> Void in }
     }
     
     @IBAction func dateChanged(sender: AnyObject) {
+        self.checkParams()
+        
         let dateFormatter = NSDateFormatter()
         
         dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
@@ -34,6 +38,36 @@ class LibrarianAddAuthorController : UITableViewController, UITextFieldDelegate 
         return true
     }
     
+    @IBAction func authorNameChanged(sender: AnyObject) {
+        self.checkParams()
+    }
+    
+    func checkParams() {
+        var errors : [String] = [String]()
+        
+        if(authorName.text!.isEmpty) {
+            errors.append("Название книги не должно быть пустым")
+        }
+        
+        if(errors.isEmpty) {
+            addButton.enabled = true
+        } else {
+            addButton.enabled = false
+        }
+    }
+    
+    @IBAction func addAuthor(sender: AnyObject) {
+        let author : Author = Author()
+        author.name = authorName.text!
+
+        author.insertToDB()
+        
+        let alert = UIAlertController(title: "Автор", message: "Автор успешно добавлен", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+        alert.addAction(alertAction)
+        presentViewController(alert, animated: true) { () -> Void in self.cancelButton(self)}
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,5 +78,7 @@ class LibrarianAddAuthorController : UITableViewController, UITextFieldDelegate 
         
         datePicker.setDate(NSDate(), animated: true)
         dateChanged(self)
+        
+        addButton.enabled = false
     }
 }

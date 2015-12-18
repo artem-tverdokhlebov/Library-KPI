@@ -1,0 +1,18 @@
+
+/* Class = "UIButton"; normalTitle = "Библиотекарь"; ObjectID = "FJH-JC-SJR"; */
+"FJH-JC-SJR.normalTitle" = "Библиотекарь";
+
+/* Class = "UILabel"; text = "или"; ObjectID = "IC3-Vq-Z6o"; */
+"IC3-Vq-Z6o.text" = "или";
+
+/* Class = "UILabel"; text = "Библиотека"; ObjectID = "Obg-qC-JS3"; */
+"Obg-qC-JS3.text" = "Библиотека";
+
+/* Class = "UILabel"; text = "Кто вы?"; ObjectID = "doS-IJ-D9w"; */
+"doS-IJ-D9w.text" = "Кто вы?";
+
+/* Class = "UIButton"; normalTitle = "Читатель"; ObjectID = "hfo-be-O8v"; */
+"hfo-be-O8v.normalTitle" = "Читатель";
+
+/* Class = "UILabel"; text = "Добро пожаловать в программу управления библиотекой!"; ObjectID = "rmN-9c-pdj"; */
+"rmN-9c-pdj.text" = "Добро пожаловать в программу управления библиотекой!";

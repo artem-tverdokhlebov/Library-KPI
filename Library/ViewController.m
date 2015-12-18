@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <Library-Swift.h>
 #import "Book.h"
 @interface ViewController ()
 
@@ -18,11 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    
-    NSArray *ar = [DB query: @"SELECT * FROM book"];
-    Book *b = [Book new];
-    [b parseFromDictionary:ar[0]];
+
 }
 
 - (void)didReceiveMemoryWarning {

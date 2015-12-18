@@ -29,4 +29,13 @@ import Foundation
         
         return books
     }
+    
+    func insertToDB() {
+        DB.query("INSERT INTO theme VALUES('', '\(title)')");
+    }
+    
+    func deleteFromDB() {
+        DB.query("DELETE FROM theme WHERE id = \(self.theme_id)")
+        DB.query("DELETE FROM book WHERE")
+    }
 }

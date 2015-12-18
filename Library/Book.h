@@ -15,8 +15,17 @@
 @property (nonatomic) NSString *udk;
 @property (nonatomic) int cardID;
 
+
 -(void)parseFromDictionary:(NSDictionary *) dictionary;
--(void)deleteFromDataBase;
+-(void)deleteFromDB;
+-(NSArray *)getAuthors;
+-(NSArray *)getThemes;
+-(void)connectToAuthor:(NSObject *)author;
+-(void)connectToTheme:(NSObject *)theme;
+-(void)insertToDB;
 @end
 
 //TODO: getAuthors() -> [Author]
+//TODO: connectToAuthor(author : Author) -> void | INSERT INTO bookTheme VALUES (book_id, author_id);
+//TODO: connectToTheme(theme : Theme) -> void | INSERT INTO bookTheme VALUES (book_id, theme_id);
+//TODO: insertToDB()

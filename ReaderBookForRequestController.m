@@ -9,6 +9,7 @@
 #import "ReaderBookForRequestController.h"
 #import "Book.h"
 #import "Library-Swift.h"
+#import "ReaderShowBookController.h"
 @interface ReaderBookForRequestController ()
 @property (nonatomic) NSArray *data;
 @property (nonatomic) NSMutableArray <Book *> *books;
@@ -58,5 +59,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.books.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.destinationViewController isKindOfClass:[ReaderShowBookController class]]){
+        ReaderShowBookController *nextVC = segue.destinationViewController;
+        nextVC.book = self.books[[self.tableView indexPathForSelectedRow].row];
+    }
+    
 }
 @end

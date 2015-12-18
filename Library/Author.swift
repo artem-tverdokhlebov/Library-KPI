@@ -31,4 +31,12 @@ import Foundation
         
         return books
     }
+
+    func insertToDB() {
+        DB.query("INSERT INTO author VALUES('', '\(name)', '\(birthDate)')");
+    }
+    
+    func deleteFromDB() {
+        DB.query("DELETE FROM author WHERE id = \(self.author_id)")
+    }
 }

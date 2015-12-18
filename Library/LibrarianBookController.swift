@@ -35,7 +35,8 @@ class LibrarianBookController : UITableViewController {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
-            //books[indexPath.row].dbDelete()
+            self.books[indexPath.row].deleteFromDB()
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         })
         
         deleteAction.backgroundColor = UIColor.redColor()
@@ -43,9 +44,18 @@ class LibrarianBookController : UITableViewController {
         return [deleteAction]
     }
     
+    @IBAction func editButtonClicked(sender: AnyObject) {
+        if(self.tableView.editing) {
+            navigationItem.setLeftBarButtonItem(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "editButtonClicked:"), animated: true)
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            navigationItem.setLeftBarButtonItem(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "editButtonClicked:"), animated: true)
+            self.tableView.setEditing(true, animated: true)
+        }
+    }
+    
     @IBAction func refresh(sender: AnyObject) {
         self.loadBooks()
-        
         tableView.reloadData()
     }
     

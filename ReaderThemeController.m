@@ -9,9 +9,11 @@
 #import "ReaderThemeController.h"
 #import "Library-Swift.h"
 #import "ReaderBookForRequestController.h"
-@interface ReaderThemeController ()
+
+@interface ReaderThemeController ()<UISearchBarDelegate>
 @property (nonatomic) NSArray *data;
 @property (nonatomic) NSMutableArray <Theme *> *themes;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 @implementation ReaderThemeController
@@ -26,6 +28,7 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.searchBar.delegate = self;
     
     self.data = [DB query:@"SELECT * FROM theme"];
     for (NSObject *item in self.data) {
@@ -53,8 +56,29 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.destinationViewController isKindOfClass:[ReaderBookForRequestController class]]){
         ReaderBookForRequestController *nextVC = segue.destinationViewController;
-        nextVC.query = [NSString stringWithFormat:@"SELECT * FROM book WHERE theme_id = %i", self.themes[[self.tableView indexPathForSelectedRow].row].theme_id];
+        nextVC.query = [NSString stringWithFormat:@"SELECT book.* FROM book INNER JOIN bookTheme ON bookTheme.book_id = book.id WHERE theme_id = %i", self.themes[[self.tableView indexPathForSelectedRow].row].theme_id];
     }
+}
+-(void)getResultsByTitle:(NSString *)title{
+    if(title){
+        self.data = [DB query:[NSString stringWithFormat:@"SELECT * FROM theme WHERE title LIKE '%%%@%%'",title]];
+    } else {
+        self.data = [DB query:@"SELECT * FROM theme"];
+        
+    }
+    self.themes = [@[] mutableCopy];
+    for (NSObject *item in self.data) {
+        Theme *theme = [Theme new];
+        [theme parseFromDictionary:(NSDictionary *)item];
+        [self.themes addObject:theme];
+    }
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];
+    [self getResultsByTitle:self.searchBar.text];
+    
+    [self.tableView reloadData];
 }
 
 @end

@@ -33,6 +33,10 @@
 		ACC03E461C2212FD009C1BAB /* LibrarianAddAuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E451C2212FD009C1BAB /* LibrarianAddAuthorController.swift */; };
 		ACC03E481C221B52009C1BAB /* LibrarianShowBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E471C221B52009C1BAB /* LibrarianShowBookController.swift */; };
 		ACC03E4A1C2222C5009C1BAB /* LibrarianShowAuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */; };
+		ACC34BF61C24BAD000042977 /* ReaderShowBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BF51C24BAD000042977 /* ReaderShowBookController.m */; };
+		ACC34BFB1C24BAF700042977 /* ReaderBookForrequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BF81C24BAF700042977 /* ReaderBookForrequestController.m */; };
+		ACC34BFC1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BFA1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m */; };
+		ACC34C001C24BCC500042977 /* LibrarianAddThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */; };
 		ACF29E8B1C1CB3960011245C /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF29E8A1C1CB3960011245C /* Author.swift */; };
 		ACF29E8D1C1CB3A00011245C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF29E8C1C1CB3A00011245C /* Theme.swift */; };
 		ACF29E8F1C1CB3EE0011245C /* Reader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF29E8E1C1CB3EE0011245C /* Reader.swift */; };
@@ -79,6 +83,15 @@
 		ACC03E451C2212FD009C1BAB /* LibrarianAddAuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAddAuthorController.swift; sourceTree = "<group>"; };
 		ACC03E471C221B52009C1BAB /* LibrarianShowBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianShowBookController.swift; sourceTree = "<group>"; };
 		ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianShowAuthorController.swift; sourceTree = "<group>"; };
+		ACC34BF41C24BABB00042977 /* ReaderShowBookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderShowBookController.h; sourceTree = "<group>"; };
+		ACC34BF51C24BAD000042977 /* ReaderShowBookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderShowBookController.m; sourceTree = "<group>"; };
+		ACC34BF71C24BAF700042977 /* ReaderBookForrequestController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderBookForrequestController.h; sourceTree = "<group>"; };
+		ACC34BF81C24BAF700042977 /* ReaderBookForrequestController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderBookForrequestController.m; sourceTree = "<group>"; };
+		ACC34BF91C24BAF700042977 /* ReaderBookThemeOrAuthorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderBookThemeOrAuthorController.h; sourceTree = "<group>"; };
+		ACC34BFA1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderBookThemeOrAuthorController.m; sourceTree = "<group>"; };
+		ACC34BFD1C24BB3200042977 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		ACC34BFE1C24BB3200042977 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAddThemeController.swift; sourceTree = "<group>"; };
 		ACF29E8A1C1CB3960011245C /* Author.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		ACF29E8C1C1CB3A00011245C /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		ACF29E8E1C1CB3EE0011245C /* Reader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reader.swift; sourceTree = "<group>"; };
@@ -140,6 +153,12 @@
 		3A84D5941C21FDDE00AA08B3 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				ACC34BF71C24BAF700042977 /* ReaderBookForrequestController.h */,
+				ACC34BF81C24BAF700042977 /* ReaderBookForrequestController.m */,
+				ACC34BF91C24BAF700042977 /* ReaderBookThemeOrAuthorController.h */,
+				ACC34BFA1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m */,
+				ACC34BF51C24BAD000042977 /* ReaderShowBookController.m */,
+				ACC34BF41C24BABB00042977 /* ReaderShowBookController.h */,
 				3A3A8D7E1C1CD74800656CCF /* ReaderBookController.h */,
 				3A3A8D7F1C1CD74800656CCF /* ReaderBookController.m */,
 				3A6C71291C1D9A94004BBE35 /* ReaderThemeController.h */,
@@ -195,18 +214,43 @@
 		ACC03E401C21E766009C1BAB /* Librarian */ = {
 			isa = PBXGroup;
 			children = (
-				AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */,
-				AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */,
-				AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */,
+				ACC34C011C24C0C800042977 /* Book */,
+				ACC34C021C24C0D400042977 /* Author */,
+				ACC34C031C24C11100042977 /* Theme */,
 				AC1BD4FF1C1CDB8B00703479 /* LibrarianSearchController.swift */,
 				ACFA77E91C1DDB0500F75C8A /* LibrarianRequestController.swift */,
-				ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */,
 				ACC03E431C21EA5C009C1BAB /* LibrarianSelectController.swift */,
-				ACC03E451C2212FD009C1BAB /* LibrarianAddAuthorController.swift */,
-				ACC03E471C221B52009C1BAB /* LibrarianShowBookController.swift */,
-				ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */,
 			);
 			name = Librarian;
+			sourceTree = "<group>";
+		};
+		ACC34C011C24C0C800042977 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */,
+				ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */,
+				ACC03E471C221B52009C1BAB /* LibrarianShowBookController.swift */,
+			);
+			name = Book;
+			sourceTree = "<group>";
+		};
+		ACC34C021C24C0D400042977 /* Author */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */,
+				ACC03E451C2212FD009C1BAB /* LibrarianAddAuthorController.swift */,
+				ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */,
+			);
+			name = Author;
+			sourceTree = "<group>";
+		};
+		ACC34C031C24C11100042977 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */,
+				ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */,
+			);
+			name = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +329,7 @@
 				ACF29E8B1C1CB3960011245C /* Author.swift in Sources */,
 				3A3A8D741C1CB1E500656CCF /* Book.m in Sources */,
 				3A3A8D7D1C1CB4C800656CCF /* TakenBook.m in Sources */,
+				ACC34BFB1C24BAF700042977 /* ReaderBookForrequestController.m in Sources */,
 				ACC03E461C2212FD009C1BAB /* LibrarianAddAuthorController.swift in Sources */,
 				AC1BD4FA1C1CCBBF00703479 /* LibrarianBookController.swift in Sources */,
 				3A4E66191C1CA5780008E7F8 /* ViewController.m in Sources */,
@@ -304,9 +349,12 @@
 				AC31ED1F1C1CA5B000AF5BB8 /* DB.swift in Sources */,
 				3A6C712B1C1D9A94004BBE35 /* ReaderThemeController.m in Sources */,
 				3A4E66161C1CA5780008E7F8 /* AppDelegate.m in Sources */,
+				ACC34BF61C24BAD000042977 /* ReaderShowBookController.m in Sources */,
 				3A4E66131C1CA5780008E7F8 /* main.m in Sources */,
+				ACC34C001C24BCC500042977 /* LibrarianAddThemeController.swift in Sources */,
 				ACC03E441C21EA5C009C1BAB /* LibrarianSelectController.swift in Sources */,
 				ACF29E8D1C1CB3A00011245C /* Theme.swift in Sources */,
+				ACC34BFC1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +365,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A4E661B1C1CA5780008E7F8 /* Base */,
+				ACC34BFD1C24BB3200042977 /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -325,6 +374,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A4E66201C1CA5780008E7F8 /* Base */,
+				ACC34BFE1C24BB3200042977 /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -368,7 +418,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -406,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -423,7 +473,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Library/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kpi.Library;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +493,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Library/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kpi.Library;
 				PRODUCT_NAME = "$(TARGET_NAME)";

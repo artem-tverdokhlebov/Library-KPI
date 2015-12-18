@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gKy-ly-awA">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Request Controller-->
@@ -62,16 +62,18 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Книги" id="4n7-3G-QoJ">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Изменить" id="lAW-0w-glh"/>
-                            <barButtonItem systemItem="add" id="RAk-zf-61R">
-                                <connections>
-                                    <segue destination="9oU-h0-I4H" kind="popoverPresentation" popoverAnchorBarButtonItem="RAk-zf-61R" id="Pdc-Ye-BP5">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lAW-0w-glh">
+                            <connections>
+                                <action selector="editButtonClicked:" destination="P4P-9r-5qx" id="EJx-82-0Wm"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="RAk-zf-61R">
+                            <connections>
+                                <segue destination="9oU-h0-I4H" kind="popoverPresentation" popoverAnchorBarButtonItem="RAk-zf-61R" id="Pdc-Ye-BP5">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="5oD-4Z-cdl">
@@ -127,16 +129,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Авторы" id="l5X-m1-ADu">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Изменить" id="B9h-XT-98W"/>
-                            <barButtonItem systemItem="add" id="sTw-SU-ppB">
-                                <connections>
-                                    <segue destination="gWH-eq-32c" kind="popoverPresentation" popoverAnchorBarButtonItem="sTw-SU-ppB" id="J5i-F9-XGF">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="B9h-XT-98W">
+                            <connections>
+                                <action selector="editButtonClicked:" destination="qLk-nq-M37" id="tcx-Hq-8yb"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sTw-SU-ppB">
+                            <connections>
+                                <segue destination="gWH-eq-32c" kind="popoverPresentation" popoverAnchorBarButtonItem="sTw-SU-ppB" id="J5i-F9-XGF">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="DXp-iY-6Yr" id="TkC-nD-ogI"/>
@@ -189,7 +193,20 @@
                             <outlet property="delegate" destination="oI1-gp-KZk" id="vlq-2X-Gqe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Темы" id="XIQ-cL-H1C"/>
+                    <navigationItem key="navigationItem" title="Темы" id="XIQ-cL-H1C">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ck1-hb-QRW">
+                            <connections>
+                                <action selector="editButtonClicked:" destination="oI1-gp-KZk" id="S4q-mo-iJr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="rtM-zh-4Vc">
+                            <connections>
+                                <segue destination="gkP-wG-ImF" kind="popoverPresentation" popoverAnchorBarButtonItem="rtM-zh-4Vc" id="V0I-Hn-hGQ">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="qOY-Zi-HGx" id="fTC-C6-LJw"/>
                     </connections>
@@ -220,7 +237,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="aG9-dZ-PF4">
-                                <rect key="frame" x="20" y="118" width="560" height="29"/>
+                                <rect key="frame" x="20" y="116" width="560" height="29"/>
                                 <segments>
                                     <segment title="По названию"/>
                                     <segment title="По УДК"/>
@@ -229,7 +246,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ksd-bv-Tj4">
-                                <rect key="frame" x="0.0" y="154" width="600" height="397"/>
+                                <rect key="frame" x="0.0" y="152" width="600" height="399"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="bookCell" textLabel="iF6-5p-qVm" style="IBUITableViewCellStyleDefault" id="PMG-U3-KHV">
@@ -266,7 +283,7 @@
                             <constraint firstItem="Ksd-bv-Tj4" firstAttribute="top" secondItem="aG9-dZ-PF4" secondAttribute="bottom" constant="8" id="jt9-RH-Mcm"/>
                             <constraint firstItem="Wp9-6s-qJS" firstAttribute="top" secondItem="Ksd-bv-Tj4" secondAttribute="bottom" id="qZU-l9-gtF"/>
                             <constraint firstItem="Ksd-bv-Tj4" firstAttribute="leading" secondItem="4kK-ze-ye1" secondAttribute="leading" id="t35-64-Osk"/>
-                            <constraint firstItem="aG9-dZ-PF4" firstAttribute="top" secondItem="h0N-Hc-Ucf" secondAttribute="bottom" constant="10" id="wAo-d3-RGl"/>
+                            <constraint firstItem="aG9-dZ-PF4" firstAttribute="top" secondItem="h0N-Hc-Ucf" secondAttribute="bottom" constant="8" id="wAo-d3-RGl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Поиск" id="k9G-5R-ocV"/>
@@ -306,7 +323,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="88w-BQ-ENj">
                                 <cells>
@@ -321,6 +337,9 @@
                                                     <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="bookTitleChanged:" destination="qu9-Bg-uO0" eventType="editingChanged" id="9wT-gi-10F"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -342,8 +361,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Автор" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJr-gw-ffg">
-                                                    <rect key="frame" x="15" y="12" width="46" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Авторы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lJr-gw-ffg">
+                                                    <rect key="frame" x="15" y="12" width="57" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -369,8 +388,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Тема" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T9W-fT-2yW">
-                                                    <rect key="frame" x="15" y="12" width="39" height="20"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Темы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T9W-fT-2yW">
+                                                    <rect key="frame" x="15" y="12" width="41" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -391,6 +410,34 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="QvP-QD-adw">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4Hj-Nn-rwd">
+                                        <rect key="frame" x="0.0" y="303" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Hj-Nn-rwd" id="bU8-07-h3l">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="УДК" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="27I-Ve-yOB">
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="bookUDKChanged:" destination="qu9-Bg-uO0" eventType="editingChanged" id="F3h-w8-BK6"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="27I-Ve-yOB" secondAttribute="bottom" id="9YY-YS-CAy"/>
+                                                <constraint firstItem="27I-Ve-yOB" firstAttribute="top" secondItem="bU8-07-h3l" secondAttribute="top" id="TdZ-ND-nJE"/>
+                                                <constraint firstItem="27I-Ve-yOB" firstAttribute="leading" secondItem="bU8-07-h3l" secondAttribute="leadingMargin" constant="8" id="eh9-pB-csW"/>
+                                                <constraint firstAttribute="trailing" secondItem="27I-Ve-yOB" secondAttribute="trailing" constant="8" id="gEs-K3-MM9"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="qu9-Bg-uO0" id="XVO-A9-vG0"/>
@@ -398,19 +445,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Новая книга" id="71Y-w9-nj7">
-                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="QyM-zK-9t4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="QyM-zK-9t4">
                             <connections>
                                 <action selector="cancelButton:" destination="qu9-Bg-uO0" id="wXm-lT-rki"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Добавить" id="Gsl-qj-Jto">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gsl-qj-Jto">
                             <connections>
                                 <action selector="addBook:" destination="qu9-Bg-uO0" id="1NB-7z-vG3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="Gsl-qj-Jto" id="K5t-Gh-VNN"/>
                         <outlet property="bookTitle" destination="GUi-NZ-IcL" id="zCf-W1-2yS"/>
+                        <outlet property="bookUDK" destination="27I-Ve-yOB" id="mAp-Qb-Cbc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LvC-DX-g7Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -424,7 +473,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ZrP-Lm-J9d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="54i-Dv-wvr">
                                 <cells>
@@ -439,7 +488,7 @@
                                                     <rect key="frame" x="15" y="12" width="74" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TSy-BX-aDg">
@@ -467,7 +516,7 @@
                                                     <rect key="frame" x="15" y="12" width="57" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KAA-0c-a9U">
@@ -491,7 +540,7 @@
                                                     <rect key="frame" x="15" y="12" width="73" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mDj-L3-Pbl">
@@ -553,25 +602,15 @@
         <scene sceneID="czD-5J-SxC">
             <objects>
                 <tableViewController id="yLS-Ox-2AY" userLabel="Новый автор" customClass="LibrarianAddAuthorController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ong-49-GnH">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="ong-49-GnH">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <datePicker key="tableFooterView" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" id="Y9A-qj-Uc7">
-                            <rect key="frame" x="0.0" y="152" width="600" height="200"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <date key="date" timeIntervalSinceReferenceDate="471995000.22038698">
-                                <!--2015-12-16 21:43:20 +0000-->
-                            </date>
-                            <connections>
-                                <action selector="dateChanged:" destination="yLS-Ox-2AY" eventType="valueChanged" id="mFH-8G-daj"/>
-                            </connections>
-                        </datePicker>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="dZG-KA-GZu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Y9k-9q-hDW">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y9k-9q-hDW" id="lHO-tT-iCi">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -581,6 +620,9 @@
                                                     <rect key="frame" x="16" y="0.0" width="576" height="43"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="authorNameChanged:" destination="yLS-Ox-2AY" eventType="editingChanged" id="7oM-Mm-0rf"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -591,28 +633,50 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="l6P-u0-aOC" detailTextLabel="a8Q-WQ-G8y" style="IBUITableViewCellStyleValue1" id="rF7-7H-7CR">
-                                        <rect key="frame" x="0.0" y="108" width="600" height="44"/>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Nbc-9z-XYB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="240" id="rF7-7H-7CR">
+                                        <rect key="frame" x="0.0" y="179" width="600" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rF7-7H-7CR" id="UkE-SA-ijx">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Дата рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l6P-u0-aOC">
-                                                    <rect key="frame" x="15" y="12" width="117" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Дата рождения" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MX5-e6-Laf">
+                                                    <rect key="frame" x="16" y="12" width="117" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="a8Q-WQ-G8y">
-                                                    <rect key="frame" x="543" y="12" width="42" height="20"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rra-fg-sLu">
+                                                    <rect key="frame" x="584" y="12" width="0.0" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <datePicker contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Y9A-qj-Uc7">
+                                                    <rect key="frame" x="0.0" y="36" width="600" height="200"/>
+                                                    <date key="date" timeIntervalSinceReferenceDate="471995000.22038698">
+                                                        <!--2015-12-16 21:43:20 +0000-->
+                                                    </date>
+                                                    <connections>
+                                                        <action selector="dateChanged:" destination="yLS-Ox-2AY" eventType="valueChanged" id="mFH-8G-daj"/>
+                                                    </connections>
+                                                </datePicker>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y9A-qj-Uc7" firstAttribute="top" secondItem="MX5-e6-Laf" secondAttribute="bottom" constant="4" id="8U6-fb-z52"/>
+                                                <constraint firstItem="MX5-e6-Laf" firstAttribute="top" secondItem="UkE-SA-ijx" secondAttribute="topMargin" constant="4" id="DQr-Ls-d5a"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Y9A-qj-Uc7" secondAttribute="trailing" constant="-8" id="Hh6-GE-wRj"/>
+                                                <constraint firstItem="Rra-fg-sLu" firstAttribute="top" secondItem="UkE-SA-ijx" secondAttribute="topMargin" constant="4" id="UIj-6p-i1F"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Y9A-qj-Uc7" secondAttribute="bottom" constant="-5" id="k63-4C-cTT"/>
+                                                <constraint firstItem="MX5-e6-Laf" firstAttribute="leading" secondItem="UkE-SA-ijx" secondAttribute="leadingMargin" constant="8" id="ksI-Ji-7cI"/>
+                                                <constraint firstItem="Y9A-qj-Uc7" firstAttribute="leading" secondItem="UkE-SA-ijx" secondAttribute="leadingMargin" constant="-8" id="lCh-rk-pdf"/>
+                                                <constraint firstItem="Y9A-qj-Uc7" firstAttribute="top" secondItem="Rra-fg-sLu" secondAttribute="bottom" constant="8" id="uxS-2J-McF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rra-fg-sLu" secondAttribute="trailing" constant="8" id="ybK-qJ-slY"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -624,15 +688,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Новый автор" id="Vt0-H5-Cza">
-                        <barButtonItem key="leftBarButtonItem" title="Отмена" id="YMM-ll-bgM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YMM-ll-bgM">
                             <connections>
-                                <action selector="cancelButtonPressed:" destination="yLS-Ox-2AY" id="JS6-xS-vHH"/>
+                                <action selector="cancelButton:" destination="yLS-Ox-2AY" id="I4a-1f-nwk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Добавить" id="lsD-GA-s9c"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lsD-GA-s9c">
+                            <connections>
+                                <action selector="addAuthor:" destination="yLS-Ox-2AY" id="une-bo-cGR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="authorBirthdate" destination="a8Q-WQ-G8y" id="d6U-nJ-oIy"/>
+                        <outlet property="addButton" destination="lsD-GA-s9c" id="u2w-Ub-3Xr"/>
+                        <outlet property="authorBirthdate" destination="Rra-fg-sLu" id="DI6-0m-eIO"/>
                         <outlet property="authorName" destination="P5P-Ty-lOO" id="RJG-09-UE2"/>
                         <outlet property="datePicker" destination="Y9A-qj-Uc7" id="9bl-xt-bh9"/>
                     </connections>
@@ -830,9 +899,91 @@
             </objects>
             <point key="canvasLocation" x="250" y="3605"/>
         </scene>
+        <!--Новая тема-->
+        <scene sceneID="Aqq-bx-izp">
+            <objects>
+                <tableViewController title="Новая тема" id="AaN-Ch-tsc" customClass="LibrarianAddThemeController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="bvh-aU-bHX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <sections>
+                            <tableViewSection id="hDL-hj-5sg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fjw-MI-oLZ">
+                                        <rect key="frame" x="0.0" y="99" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fjw-MI-oLZ" id="j2s-wg-OhA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-Ag-KTM">
+                                                    <rect key="frame" x="16" y="0.0" width="576" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="themeTitleChanged:" destination="AaN-Ch-tsc" eventType="editingChanged" id="fcr-yO-1hf"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="jfA-Ag-KTM" secondAttribute="trailing" constant="8" id="0mU-uh-eWX"/>
+                                                <constraint firstItem="jfA-Ag-KTM" firstAttribute="top" secondItem="j2s-wg-OhA" secondAttribute="top" id="Q5g-U0-BPq"/>
+                                                <constraint firstItem="jfA-Ag-KTM" firstAttribute="leading" secondItem="j2s-wg-OhA" secondAttribute="leadingMargin" constant="8" id="Yaj-dF-z5e"/>
+                                                <constraint firstAttribute="bottom" secondItem="jfA-Ag-KTM" secondAttribute="bottom" id="s8q-T9-aee"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="AaN-Ch-tsc" id="HOD-nT-Wo5"/>
+                            <outlet property="delegate" destination="AaN-Ch-tsc" id="eJC-bU-qXO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Новая тема" id="U5u-kb-Iqq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gsK-Fi-d1O">
+                            <connections>
+                                <action selector="cancelButton:" destination="AaN-Ch-tsc" id="gIz-ZS-ApH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="oBQ-CV-ZRS">
+                            <connections>
+                                <action selector="addTheme:" destination="AaN-Ch-tsc" id="gwj-bZ-g1g"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="oBQ-CV-ZRS" id="V7D-uI-4IV"/>
+                        <outlet property="themeTitle" destination="jfA-Ag-KTM" id="S68-Ag-m1i"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRR-JS-h1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="5066"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="o8j-lS-obh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gkP-wG-ImF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jlD-wB-Nd1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AaN-Ch-tsc" kind="relationship" relationship="rootViewController" id="XUB-Zy-4Iq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Qk-Pi-zNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="4336"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qnH-TU-0AV"/>
         <segue reference="Gjz-mr-65u"/>
+        <segue reference="q3W-7C-o60"/>
     </inferredMetricsTieBreakers>
 </document>

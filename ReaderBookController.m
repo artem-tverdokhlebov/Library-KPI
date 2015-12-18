@@ -9,6 +9,8 @@
 #import "ReaderBookController.h"
 #import "Book.h"
 #import "Library-Swift.h"
+#import "ReaderShowBookController.h"
+
 @interface ReaderBookController () <UISearchBarDelegate>
 @property (nonatomic) NSArray *data;
 @property (nonatomic) NSMutableArray <Book *> *books;
@@ -57,11 +59,12 @@
 
 -(void)getResultsByTitle:(NSString *)title{
     if(title){
-        self.data = [DB query:[NSString stringWithFormat:@"SELECT * FROM book WHERE title LIKE ' %@ '",title]];
+        self.data = [DB query:[NSString stringWithFormat:@"SELECT * FROM book WHERE title LIKE '%%%@%%'",title]];
     } else {
         self.data = [DB query:@"SELECT * FROM book"];
 
     }
+    self.books = [@[] mutableCopy];
     for (NSObject *item in self.data) {
         Book *book = [Book new];
         [book parseFromDictionary:(NSDictionary *)item];
@@ -70,9 +73,17 @@
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.searchBar resignFirstResponder];
     [self getResultsByTitle:self.searchBar.text];
     
     [self.tableView reloadData];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.destinationViewController isKindOfClass:[ReaderShowBookController class]]){
+        ReaderShowBookController *nextVC = segue.destinationViewController;
+        nextVC.book = self.books[[self.tableView indexPathForSelectedRow].row];
+    }
+    
 }
 
 @end

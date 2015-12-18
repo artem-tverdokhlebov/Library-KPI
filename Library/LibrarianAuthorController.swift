@@ -36,8 +36,9 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
-        let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
-            //authors[indexPath.row].dbDelete()
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Удалить", handler: { (action , indexPath) -> Void in
+            self.authors[indexPath.row].deleteFromDB()
+            self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         })
         
         deleteAction.backgroundColor = UIColor.redColor()
@@ -45,9 +46,19 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
         return [deleteAction]
     }
     
+    @IBAction func editButtonClicked(sender: AnyObject) {
+        if(self.tableView.editing) {
+            navigationItem.setLeftBarButtonItem(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: "editButtonClicked:"), animated: true)
+            self.tableView.setEditing(false, animated: true)
+        } else {
+            navigationItem.setLeftBarButtonItem(UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "editButtonClicked:"), animated: true)
+            self.tableView.setEditing(true, animated: true)
+        }
+    }
+    
     func getResultsByName(query : String) {
         if(query != "") {
-            data = DB.query("SELECT * FROM author WHERE name LIKE '%" + query + "%'")
+            data = DB.query("SELECT * FROM author WHERE name LIKE '%\(query)%'")
         } else {
             data = DB.query("SELECT * FROM author")
         }
