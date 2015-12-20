@@ -11,7 +11,7 @@
 @interface Book : NSObject
 @property (nonatomic) NSString *title;
 @property (nonatomic) int bookID;
-@property (nonatomic) int inventoryNumber;
+//@property (nonatomic) int inventoryNumber;
 @property (nonatomic) NSString *udk;
 @property (nonatomic) int cardID;
 
@@ -25,7 +25,5 @@
 -(void)insertToDB;
 @end
 
-//TODO: getAuthors() -> [Author]
-//TODO: connectToAuthor(author : Author) -> void | INSERT INTO bookTheme VALUES (book_id, author_id);
-//TODO: connectToTheme(theme : Theme) -> void | INSERT INTO bookTheme VALUES (book_id, theme_id);
-//TODO: insertToDB()
+//TODO: getCard()
+//TODO: setCard(Card)

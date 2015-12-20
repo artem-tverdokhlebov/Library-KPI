@@ -38,4 +38,14 @@ import Foundation
         DB.query("DELETE FROM theme WHERE id = \(self.theme_id)")
         DB.query("DELETE FROM book WHERE")
     }
+    
+    func updateInDB() {
+        DB.query("UPDATE theme SET title = '\(self.title)' WHERE id = \(self.theme_id)")
+    }
+    
+    func reloadFromDB() {
+        let data : NSArray = DB.query("SELECT theme.* FROM theme WHERE id = \(self.theme_id)")
+        self.parseFromDictionary(data[0] as! NSDictionary)
+    }
+    
 }

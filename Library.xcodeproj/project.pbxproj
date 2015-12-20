@@ -17,8 +17,9 @@
 		AC1BD4FA1C1CCBBF00703479 /* LibrarianBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */; };
 		AC1BD4FC1C1CD4F100703479 /* LibrarianAuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */; };
 		AC1BD4FE1C1CD50200703479 /* LibrarianThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */; };
-		AC1BD5001C1CDB8B00703479 /* LibrarianSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4FF1C1CDB8B00703479 /* LibrarianSearchController.swift */; };
 		AC31ED1F1C1CA5B000AF5BB8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31ED1E1C1CA5B000AF5BB8 /* DB.swift */; };
+		AC4CA19E1C262A6C00ABC8CD /* LibrarianShowThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */; };
+		AC4CA1A01C262DBA00ABC8CD /* LibrarianEditThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */; };
 		ACC03E3D1C21D1E2009C1BAB /* Librarian.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC03E3C1C21D1E2009C1BAB /* Librarian.storyboard */; };
 		ACC03E3F1C21D25E009C1BAB /* Reader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC03E3E1C21D25E009C1BAB /* Reader.storyboard */; };
 		ACC03E421C21E788009C1BAB /* LibrarianAddBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */; };
@@ -58,9 +59,10 @@
 		AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianBookController.swift; sourceTree = "<group>"; };
 		AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAuthorController.swift; sourceTree = "<group>"; };
 		AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianThemeController.swift; sourceTree = "<group>"; };
-		AC1BD4FF1C1CDB8B00703479 /* LibrarianSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianSearchController.swift; sourceTree = "<group>"; };
 		AC31ED1D1C1CA5AF00AF5BB8 /* Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Library-Bridging-Header.h"; sourceTree = "<group>"; };
 		AC31ED1E1C1CA5B000AF5BB8 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
+		AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianShowThemeController.swift; sourceTree = "<group>"; };
+		AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianEditThemeController.swift; sourceTree = "<group>"; };
 		ACC03E3C1C21D1E2009C1BAB /* Librarian.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Librarian.storyboard; sourceTree = "<group>"; };
 		ACC03E3E1C21D25E009C1BAB /* Reader.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reader.storyboard; sourceTree = "<group>"; };
 		ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAddBookController.swift; sourceTree = "<group>"; };
@@ -212,7 +214,6 @@
 				ACC34C011C24C0C800042977 /* Book */,
 				ACC34C021C24C0D400042977 /* Author */,
 				ACC34C031C24C11100042977 /* Theme */,
-				AC1BD4FF1C1CDB8B00703479 /* LibrarianSearchController.swift */,
 				ACFA77E91C1DDB0500F75C8A /* LibrarianRequestController.swift */,
 				ACC03E431C21EA5C009C1BAB /* LibrarianSelectController.swift */,
 			);
@@ -244,6 +245,8 @@
 			children = (
 				AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */,
 				ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */,
+				AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */,
+				AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				ACC03E461C2212FD009C1BAB /* LibrarianAddAuthorController.swift in Sources */,
 				AC1BD4FA1C1CCBBF00703479 /* LibrarianBookController.swift in Sources */,
 				3A4E66191C1CA5780008E7F8 /* ViewController.m in Sources */,
+				AC4CA19E1C262A6C00ABC8CD /* LibrarianShowThemeController.swift in Sources */,
 				ACF29E8F1C1CB3EE0011245C /* Reader.swift in Sources */,
 				AC1BD4FE1C1CD50200703479 /* LibrarianThemeController.swift in Sources */,
 				ACC34C181C24C76000042977 /* Ticket.m in Sources */,
@@ -334,11 +338,11 @@
 				ACC34C171C24C76000042977 /* TakenBook.m in Sources */,
 				ACFA77EA1C1DDB0500F75C8A /* LibrarianRequestController.swift in Sources */,
 				ACC03E4A1C2222C5009C1BAB /* LibrarianShowAuthorController.swift in Sources */,
-				AC1BD5001C1CDB8B00703479 /* LibrarianSearchController.swift in Sources */,
 				AC1BD4FC1C1CD4F100703479 /* LibrarianAuthorController.swift in Sources */,
 				ACC34C161C24C76000042977 /* Card.m in Sources */,
 				ACC34C0E1C24C74A00042977 /* ReaderBookForRequestController.m in Sources */,
 				ACC34C0C1C24C74A00042977 /* ReaderAuthorController.m in Sources */,
+				AC4CA1A01C262DBA00ABC8CD /* LibrarianEditThemeController.swift in Sources */,
 				ACC03E481C221B52009C1BAB /* LibrarianShowBookController.swift in Sources */,
 				AC31ED1F1C1CA5B000AF5BB8 /* DB.swift in Sources */,
 				3A4E66161C1CA5780008E7F8 /* AppDelegate.m in Sources */,
@@ -474,7 +478,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Library-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -493,7 +497,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Library-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

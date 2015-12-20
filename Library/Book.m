@@ -14,7 +14,7 @@
 
 -(void)parseFromDictionary:(NSDictionary *)dictionary{
     self.bookID =[dictionary[@"id"] intValue];
-    self.inventoryNumber = [dictionary[@"inventoryValue"] intValue];
+    //self.inventoryNumber = [dictionary[@"inventoryValue"] intValue];
     self.title = dictionary[@"title"];
     self.udk = dictionary[@"udk"];
     self.cardID = [dictionary[@"card_id"] intValue];
@@ -56,7 +56,7 @@
     [DB query:[NSString stringWithFormat:@"INSERT INTO bookTheme VALUES (%i, %i)", self.bookID, theme.theme_id]];
 }
 -(void)insertToDB{
-    [DB query:[NSString stringWithFormat:@"INSERT INTO bookTheme VALUES ('',%i,'%@','%@', %i)",self.inventoryNumber, self.title, self.udk, self.cardID]];
+    [DB query:[NSString stringWithFormat:@"INSERT INTO bookTheme VALUES ('','%@','%@', %i)", self.title, self.udk, self.cardID]];
 }
 
 @end

@@ -9,16 +9,18 @@
 import Foundation
 import UIKit
 
-class LibrarianBookController : UITableViewController {
+class LibrarianBookController : UITableViewController, UISearchBarDelegate {
     var data : NSArray = NSArray()
     var books : [Book] = [Book]()
+    
+    @IBOutlet var searchBar: UISearchBar!
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return books.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let bookCell = tableView.dequeueReusableCellWithIdentifier("bookCell", forIndexPath: indexPath) 
+        let bookCell = self.tableView.dequeueReusableCellWithIdentifier("bookCell", forIndexPath: indexPath)
     
         bookCell.textLabel!.text = books[indexPath.row].title
 
@@ -36,6 +38,7 @@ class LibrarianBookController : UITableViewController {
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
             self.books[indexPath.row].deleteFromDB()
+            self.books.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         })
         
@@ -56,7 +59,13 @@ class LibrarianBookController : UITableViewController {
     
     @IBAction func refresh(sender: AnyObject) {
         self.loadBooks()
+        
         tableView.reloadData()
+        
+        if self.refreshControl!.refreshing
+        {
+            self.refreshControl!.endRefreshing()
+        }
     }
     
     func loadBooks() {
@@ -69,11 +78,6 @@ class LibrarianBookController : UITableViewController {
             book.parseFromDictionary(item as! [NSObject : AnyObject])
             books.append(book)
         }
-        
-        if self.refreshControl!.refreshing
-        {
-            self.refreshControl!.endRefreshing()
-        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -84,11 +88,90 @@ class LibrarianBookController : UITableViewController {
         }
     }
     
+    func getResultsByTitle(query : String) {
+        data = DB.query("SELECT * FROM book WHERE title LIKE '%" + query + "%'")
+        books = [Book]()
+        
+        for item in data {
+            let book : Book = Book()
+            book.parseFromDictionary(item as! [NSObject : AnyObject])
+            books.append(book)
+        }
+    }
+    
+    func getResultsByUDK(query : String) {
+        data = DB.query("SELECT * FROM book WHERE udk LIKE '%" + query + "%'")
+        books = [Book]()
+        
+        for item in data {
+            let book : Book = Book()
+            book.parseFromDictionary(item as! [NSObject : AnyObject])
+            books.append(book)
+        }
+    }
+    
+    func getResultsByTheme(query : String) {
+        data = DB.query("SELECT book.* FROM book INNER JOIN theme ON book.theme_id = theme.id WHERE theme.title LIKE '%" + query + "%'")
+        books = [Book]()
+        
+        for item in data {
+            let book : Book = Book()
+            book.parseFromDictionary(item as! [NSObject : AnyObject])
+            books.append(book)
+        }
+    }
+    
+    func getResultsByAuthor(query : String) {
+        data = DB.query("SELECT * FROM book INNER JOIN author ON book.author_id = author.id WHERE author.name LIKE '%" + query + "%'")
+        books = [Book]()
+        
+        for item in data {
+            let book : Book = Book()
+            book.parseFromDictionary(item as! [NSObject : AnyObject])
+            books.append(book)
+        }
+    }
+    
+    func searchBar(searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+        
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        if(searchBar.text!.isEmpty) {
+            loadBooks()
+        } else {
+            if(searchBar.selectedScopeButtonIndex == 0) {
+                getResultsByTitle(searchBar.text! as String)
+            }
+            if(searchBar.selectedScopeButtonIndex == 1) {
+            getResultsByUDK(searchBar.text! as String)
+            }
+            if(searchBar.selectedScopeButtonIndex == 2) {
+                getResultsByAuthor(searchBar.text! as String)
+            }
+            if(searchBar.selectedScopeButtonIndex == 3) {
+                getResultsByTheme(searchBar.text! as String)
+            }
+        }
+        
+        tableView.reloadData()
+    }
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        loadBooks()
+        
+        tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
+        searchBar.scopeBarBackgroundImage = UIImage()
         
         loadBooks()
     }

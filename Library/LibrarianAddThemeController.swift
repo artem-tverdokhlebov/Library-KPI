@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 class LibrarianAddThemeController : UITableViewController, UITextFieldDelegate {
-    
     @IBOutlet var themeTitle: UITextField!
     @IBOutlet var addButton: UIBarButtonItem!
     
@@ -22,7 +21,7 @@ class LibrarianAddThemeController : UITableViewController, UITextFieldDelegate {
         var errors : [String] = [String]()
         
         if(themeTitle.text!.isEmpty) {
-            errors.append("Название книги не должно быть пустым")
+            errors.append("Название тематики не должно быть пустым")
         }
         
         if(errors.isEmpty) {
@@ -39,9 +38,9 @@ class LibrarianAddThemeController : UITableViewController, UITextFieldDelegate {
         theme.insertToDB()
         
         let alert = UIAlertController(title: "Тема", message: "Тема успешно добавлена", preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+        let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in self.cancelButton(self)}
         alert.addAction(alertAction)
-        presentViewController(alert, animated: true) { () -> Void in self.cancelButton(self)}
+        presentViewController(alert, animated: true) { () -> Void in }
     }
     
     @IBAction func themeTitleChanged(sender: AnyObject) {

@@ -59,13 +59,17 @@ class LibrarianAddAuthorController : UITableViewController, UITextFieldDelegate 
     @IBAction func addAuthor(sender: AnyObject) {
         let author : Author = Author()
         author.name = authorName.text!
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        author.birthDate = dateFormatter.stringFromDate(datePicker.date)
 
         author.insertToDB()
         
         let alert = UIAlertController(title: "Автор", message: "Автор успешно добавлен", preferredStyle: UIAlertControllerStyle.Alert)
-        let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
+        let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in self.cancelButton(self)}
         alert.addAction(alertAction)
-        presentViewController(alert, animated: true) { () -> Void in self.cancelButton(self)}
+        presentViewController(alert, animated: true) { () -> Void in }
     }
     
     override func viewDidLoad() {

@@ -9,12 +9,16 @@
 import Foundation
 import UIKit
 
-class LibrarianSelectController : UITableViewController {
+//TODO: add to selectedObjects by click and remove like this
+
+class LibrarianSelectController : UITableViewController, UISearchBarDelegate {
     var data : NSArray = NSArray()
     var objects : [AnyObject] = [AnyObject]()
 
     var selectedObjects : [AnyObject] = [AnyObject]()
 
+    @IBOutlet var searchBar: UISearchBar!
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return objects.count
     }
@@ -42,11 +46,28 @@ class LibrarianSelectController : UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(objects[indexPath.row] is Author)  {
+            if let index = selectedObjects.indexOf({$0.name == objects[indexPath.row].name}) {
+                selectedObjects.removeAtIndex(index)
+            } else {
+                selectedObjects.append(objects[indexPath.row])
+            }
+        }
+        
+        if(objects[indexPath.row] is Theme)  {
+            if let index = selectedObjects.indexOf({$0.title == objects[indexPath.row].title}) {
+                selectedObjects.removeAtIndex(index)
+            } else {
+                selectedObjects.append(objects[indexPath.row])
+            }
+        }
+        
         if(tableView.cellForRowAtIndexPath(indexPath)?.accessoryType == .Checkmark) {
             tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .None
         } else {
             tableView.cellForRowAtIndexPath(indexPath)?.accessoryType = .Checkmark
         }
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -61,13 +82,20 @@ class LibrarianSelectController : UITableViewController {
             }
         }
         
-        let destination : LibrarianAddBookController = self.navigationController!.viewControllers.last as! LibrarianAddBookController
+        //TODO: if view has disappeared from select controller
+        var destination : LibrarianAddBookController = LibrarianAddBookController()
     
-        if(objects[0] is Author)  {
+        for item in self.navigationController!.viewControllers {
+            if(item is LibrarianAddBookController) {
+                destination = item as! LibrarianAddBookController
+            }
+        }
+        
+        if(objects is [Author])  {
             destination.passAuthors(selectedObjects as! [Author])
         }
         
-        if(objects[0] is Theme)  {
+        if(objects is [Theme])  {
             destination.passThemes(selectedObjects as! [Theme])
         }
     }
@@ -104,10 +132,59 @@ class LibrarianSelectController : UITableViewController {
         self.selectedObjects = selectedObjects
     }
     
+    func getResultsByName(query : String) {
+        if(query != "") {
+            data = DB.query("SELECT * FROM author WHERE name LIKE '%\(query)%'")
+        } else {
+            data = DB.query("SELECT * FROM author")
+        }
+        objects = [Author]()
+        
+        for item in data {
+            let author : Author = Author()
+            author.parseFromDictionary(item as! [NSObject : AnyObject])
+            objects.append(author)
+        }
+    }
+
+    func getResultsByTitle(query : String) {
+        if(query != "") {
+            data = DB.query("SELECT * FROM theme WHERE title LIKE '%" + query + "%'")
+        } else {
+            data = DB.query("SELECT * FROM theme")
+        }
+        objects = [Theme]()
+        
+        for item in data {
+            let theme : Theme = Theme()
+            theme.parseFromDictionary(item as! [NSObject : AnyObject])
+            objects.append(theme)
+        }
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        
+        if(objects is [Author]) {
+            getResultsByName(searchBar.text! as String)
+        }
+        
+        if(objects is [Theme]) {
+            getResultsByTitle(searchBar.text! as String)
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBarSearchButtonClicked(searchBar)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
     }
 }

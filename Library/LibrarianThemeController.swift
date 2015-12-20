@@ -38,6 +38,7 @@ class LibrarianThemeController : UITableViewController, UISearchBarDelegate {
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
             self.themes[indexPath.row].deleteFromDB()
+            self.themes.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         })
         
@@ -79,13 +80,23 @@ class LibrarianThemeController : UITableViewController, UISearchBarDelegate {
         tableView.reloadData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    @IBAction func refresh(sender: AnyObject) {
+        if(searchBar.text!.isEmpty) {
+            loadThemes()
+        } else {
+            getResultsByTitle(searchBar.text! as String)
+        }
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        searchBar.delegate = self
+        tableView.reloadData()
         
+        if self.refreshControl!.refreshing
+        {
+            self.refreshControl!.endRefreshing()
+        }
+    }
+    
+    func loadThemes() {
         themes = [Theme]()
         
         data = DB.query("SELECT * FROM theme")
@@ -95,8 +106,24 @@ class LibrarianThemeController : UITableViewController, UISearchBarDelegate {
             theme.parseFromDictionary(item as! [NSObject : AnyObject])
             themes.append(theme)
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.destinationViewController is LibrarianShowThemeController) {
+            let destination = segue.destinationViewController as! LibrarianShowThemeController
+            
+            destination.passTheme(themes[tableView.indexPathForSelectedRow!.row])
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        tableView.reloadData()
+        tableView.delegate = self
+        tableView.dataSource = self
+        searchBar.delegate = self
+        
+        loadThemes()
     }
     
 }
