@@ -24,11 +24,11 @@ class LibrarianShowAuthorController : UITableViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*if(segue.destinationViewController is LibrarianShowAuthorController) {
-            let destination = segue.destinationViewController as! LibrarianShowAuthorController
+        if(segue.destinationViewController is LibrarianBookListController) {
+            let destination = segue.destinationViewController as! LibrarianBookListController
             
-            destination.passAuthor(authors[tableView.indexPathForSelectedRow!.row])
-        }*/
+            destination.passBooks(author.getBooks())
+        }
     }
     
     override func viewDidLoad() {

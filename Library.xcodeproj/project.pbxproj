@@ -20,6 +20,11 @@
 		AC31ED1F1C1CA5B000AF5BB8 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC31ED1E1C1CA5B000AF5BB8 /* DB.swift */; };
 		AC4CA19E1C262A6C00ABC8CD /* LibrarianShowThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */; };
 		AC4CA1A01C262DBA00ABC8CD /* LibrarianEditThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */; };
+		AC4CA1A21C26353300ABC8CD /* LibrarianBookListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA1A11C26353300ABC8CD /* LibrarianBookListController.swift */; };
+		AC4CA1A41C26355D00ABC8CD /* LibrarianAuthorListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA1A31C26355D00ABC8CD /* LibrarianAuthorListController.swift */; };
+		AC4CA1A61C26356E00ABC8CD /* LibrarianThemeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA1A51C26356E00ABC8CD /* LibrarianThemeListController.swift */; };
+		AC4CA1A81C26361300ABC8CD /* LibrarianEditBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA1A71C26361300ABC8CD /* LibrarianEditBookController.swift */; };
+		AC4CA1AA1C26362B00ABC8CD /* LibrarianEditAuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4CA1A91C26362B00ABC8CD /* LibrarianEditAuthorController.swift */; };
 		ACC03E3D1C21D1E2009C1BAB /* Librarian.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC03E3C1C21D1E2009C1BAB /* Librarian.storyboard */; };
 		ACC03E3F1C21D25E009C1BAB /* Reader.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC03E3E1C21D25E009C1BAB /* Reader.storyboard */; };
 		ACC03E421C21E788009C1BAB /* LibrarianAddBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */; };
@@ -63,6 +68,11 @@
 		AC31ED1E1C1CA5B000AF5BB8 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianShowThemeController.swift; sourceTree = "<group>"; };
 		AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianEditThemeController.swift; sourceTree = "<group>"; };
+		AC4CA1A11C26353300ABC8CD /* LibrarianBookListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianBookListController.swift; sourceTree = "<group>"; };
+		AC4CA1A31C26355D00ABC8CD /* LibrarianAuthorListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAuthorListController.swift; sourceTree = "<group>"; };
+		AC4CA1A51C26356E00ABC8CD /* LibrarianThemeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianThemeListController.swift; sourceTree = "<group>"; };
+		AC4CA1A71C26361300ABC8CD /* LibrarianEditBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianEditBookController.swift; sourceTree = "<group>"; };
+		AC4CA1A91C26362B00ABC8CD /* LibrarianEditAuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianEditAuthorController.swift; sourceTree = "<group>"; };
 		ACC03E3C1C21D1E2009C1BAB /* Librarian.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Librarian.storyboard; sourceTree = "<group>"; };
 		ACC03E3E1C21D25E009C1BAB /* Reader.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Reader.storyboard; sourceTree = "<group>"; };
 		ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAddBookController.swift; sourceTree = "<group>"; };
@@ -226,6 +236,8 @@
 				AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */,
 				ACC03E411C21E788009C1BAB /* LibrarianAddBookController.swift */,
 				ACC03E471C221B52009C1BAB /* LibrarianShowBookController.swift */,
+				AC4CA1A11C26353300ABC8CD /* LibrarianBookListController.swift */,
+				AC4CA1A71C26361300ABC8CD /* LibrarianEditBookController.swift */,
 			);
 			name = Book;
 			sourceTree = "<group>";
@@ -236,6 +248,8 @@
 				AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */,
 				ACC03E451C2212FD009C1BAB /* LibrarianAddAuthorController.swift */,
 				ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */,
+				AC4CA1A31C26355D00ABC8CD /* LibrarianAuthorListController.swift */,
+				AC4CA1A91C26362B00ABC8CD /* LibrarianEditAuthorController.swift */,
 			);
 			name = Author;
 			sourceTree = "<group>";
@@ -247,6 +261,7 @@
 				ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */,
 				AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */,
 				AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */,
+				AC4CA1A51C26356E00ABC8CD /* LibrarianThemeListController.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -324,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC4CA1A81C26361300ABC8CD /* LibrarianEditBookController.swift in Sources */,
 				ACF29E8B1C1CB3960011245C /* Author.swift in Sources */,
 				3A3A8D741C1CB1E500656CCF /* Book.m in Sources */,
 				ACC03E461C2212FD009C1BAB /* LibrarianAddAuthorController.swift in Sources */,
@@ -333,6 +349,7 @@
 				ACF29E8F1C1CB3EE0011245C /* Reader.swift in Sources */,
 				AC1BD4FE1C1CD50200703479 /* LibrarianThemeController.swift in Sources */,
 				ACC34C181C24C76000042977 /* Ticket.m in Sources */,
+				AC4CA1A21C26353300ABC8CD /* LibrarianBookListController.swift in Sources */,
 				ACC34C0F1C24C74A00042977 /* ReaderThemeController.m in Sources */,
 				ACC03E421C21E788009C1BAB /* LibrarianAddBookController.swift in Sources */,
 				ACC34C171C24C76000042977 /* TakenBook.m in Sources */,
@@ -341,7 +358,10 @@
 				AC1BD4FC1C1CD4F100703479 /* LibrarianAuthorController.swift in Sources */,
 				ACC34C161C24C76000042977 /* Card.m in Sources */,
 				ACC34C0E1C24C74A00042977 /* ReaderBookForRequestController.m in Sources */,
+				AC4CA1AA1C26362B00ABC8CD /* LibrarianEditAuthorController.swift in Sources */,
+				AC4CA1A41C26355D00ABC8CD /* LibrarianAuthorListController.swift in Sources */,
 				ACC34C0C1C24C74A00042977 /* ReaderAuthorController.m in Sources */,
+				AC4CA1A61C26356E00ABC8CD /* LibrarianThemeListController.swift in Sources */,
 				AC4CA1A01C262DBA00ABC8CD /* LibrarianEditThemeController.swift in Sources */,
 				ACC03E481C221B52009C1BAB /* LibrarianShowBookController.swift in Sources */,
 				AC31ED1F1C1CA5B000AF5BB8 /* DB.swift in Sources */,

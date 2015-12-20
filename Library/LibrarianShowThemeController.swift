@@ -29,7 +29,11 @@ class LibrarianShowThemeController : UITableViewController {
             destination.passTheme(theme)
         }
         
-        //
+        if(segue.destinationViewController is LibrarianBookListController) {
+            let destination = segue.destinationViewController as! LibrarianBookListController
+            
+            destination.passBooks(theme.getBooks())
+        }
     }
     
     override func viewDidLoad() {

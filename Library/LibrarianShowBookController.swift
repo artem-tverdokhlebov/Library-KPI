@@ -21,6 +21,20 @@ class LibrarianShowBookController : UITableViewController {
         self.book = book
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.destinationViewController is LibrarianAuthorListController) {
+            let destination = segue.destinationViewController as! LibrarianAuthorListController
+            
+            destination.passAuthors(book.getAuthors() as! [Author])
+        }
+        
+        if(segue.destinationViewController is LibrarianThemeListController) {
+            let destination = segue.destinationViewController as! LibrarianThemeListController
+            
+            destination.passThemes(book.getThemes() as! [Theme])
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
