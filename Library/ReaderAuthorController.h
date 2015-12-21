@@ -10,5 +10,6 @@
 
 
 @interface ReaderAuthorController : UITableViewController
-
+@property (nonatomic) NSArray *data;
+@property (nonatomic) int readerID;
 @end

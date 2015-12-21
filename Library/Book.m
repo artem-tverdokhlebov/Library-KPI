@@ -11,10 +11,8 @@
 
 @implementation Book
 
-
 -(void)parseFromDictionary:(NSDictionary *)dictionary{
     self.bookID =[dictionary[@"id"] intValue];
-    //self.inventoryNumber = [dictionary[@"inventoryValue"] intValue];
     self.title = dictionary[@"title"];
     self.udk = dictionary[@"udk"];
     self.cardID = [dictionary[@"card_id"] intValue];
@@ -49,14 +47,18 @@
 }
 
 -(void)connectToAuthor:(Author *)author{
-    [DB query:[NSString stringWithFormat:@"INSERT INTO bookAuthor VALUES (%i, %i)", self.bookID, author.author_id]];
+    [DB query:[NSString stringWithFormat:@"INSERT INTO bookAuthor VALUES (%i, %li)", self.bookID, (long)author.author_id]];
 }
 
 -(void)connectToTheme:(Theme *)theme{
-    [DB query:[NSString stringWithFormat:@"INSERT INTO bookTheme VALUES (%i, %i)", self.bookID, theme.theme_id]];
+    [DB query:[NSString stringWithFormat:@"INSERT INTO bookTheme VALUES (%i, %li)", self.bookID, (long)theme.theme_id]];
 }
+
 -(void)insertToDB{
     [DB query:[NSString stringWithFormat:@"INSERT INTO bookTheme VALUES ('','%@','%@', %i)", self.title, self.udk, self.cardID]];
+    
+    NSArray *data = [DB query:@"SELECT id FROM book ORDER BY id DESC LIMIT 1"];
+    self.bookID = [data[0][@"id"] intValue];
 }
 
 @end

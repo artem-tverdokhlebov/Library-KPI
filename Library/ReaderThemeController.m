@@ -39,6 +39,28 @@
     [self.tableView reloadData];
 }
 
+-(void)loadThemes{
+    self.themes = [@[] mutableCopy];
+    self.data = [DB query:@"SELECT * FROM author"];
+    for (NSObject *item in self.data) {
+        Theme *theme = [Theme new];
+        [theme parseFromDictionary:(NSDictionary *)item];
+        [self.themes addObject:theme];
+    }
+}
+- (IBAction)refresh:(id)sender {
+    
+    [self loadThemes];
+    
+    [self.tableView reloadData];
+    
+    if (self.refreshControl.refreshing){
+        [self.refreshControl endRefreshing];
+    }
+    
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"clientThemeCell" forIndexPath:indexPath];
     cell.textLabel.text = self.themes[indexPath.row].title;

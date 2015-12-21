@@ -46,7 +46,7 @@ class LibrarianAddAuthorController : UITableViewController, UITextFieldDelegate 
         var errors : [String] = [String]()
         
         if(authorName.text!.isEmpty) {
-            errors.append("Название книги не должно быть пустым")
+            errors.append("Ім'я автора не повинно бути порожнім")
         }
         
         if(errors.isEmpty) {
@@ -66,7 +66,7 @@ class LibrarianAddAuthorController : UITableViewController, UITextFieldDelegate 
 
         author.insertToDB()
         
-        let alert = UIAlertController(title: "Автор", message: "Автор успешно добавлен", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Автор", message: "Автор був успішно доданий", preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in self.cancelButton(self)}
         alert.addAction(alertAction)
         presentViewController(alert, animated: true) { () -> Void in }

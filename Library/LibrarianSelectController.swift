@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-//TODO: add to selectedObjects by click and remove like this
-
 class LibrarianSelectController : UITableViewController, UISearchBarDelegate {
     var data : NSArray = NSArray()
     var objects : [AnyObject] = [AnyObject]()
@@ -83,20 +81,34 @@ class LibrarianSelectController : UITableViewController, UISearchBarDelegate {
         }
         
         //TODO: if view has disappeared from select controller
-        var destination : LibrarianAddBookController = LibrarianAddBookController()
-    
+        var destination : AnyObject = LibrarianAddBookController()
+
         for item in self.navigationController!.viewControllers {
             if(item is LibrarianAddBookController) {
                 destination = item as! LibrarianAddBookController
             }
+            
+            if(item is LibrarianEditBookController) {
+                destination = item as! LibrarianEditBookController
+            }
         }
         
         if(objects is [Author])  {
-            destination.passAuthors(selectedObjects as! [Author])
+            if(destination is LibrarianAddBookController) {
+                (destination as! LibrarianAddBookController).passAuthors(selectedObjects as! [Author])
+            }
+            if(destination is LibrarianEditBookController) {
+                (destination as! LibrarianEditBookController).passAuthors(selectedObjects as! [Author])
+            }
         }
         
         if(objects is [Theme])  {
-            destination.passThemes(selectedObjects as! [Theme])
+            if(destination is LibrarianAddBookController) {
+                (destination as! LibrarianAddBookController).passThemes(selectedObjects as! [Theme])
+            }
+            if(destination is LibrarianEditBookController) {
+                (destination as! LibrarianEditBookController).passThemes(selectedObjects as! [Theme])
+            }
         }
     }
     

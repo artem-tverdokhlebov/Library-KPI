@@ -10,4 +10,5 @@
 
 @interface ReaderBookForRequestController : UITableViewController
 @property (nonatomic) NSString *query;
+@property (nonatomic) int readerID;
 @end

@@ -29,6 +29,12 @@ class LibrarianShowAuthorController : UITableViewController {
             
             destination.passBooks(author.getBooks())
         }
+        
+        if(segue.destinationViewController is LibrarianEditAuthorController) {
+            let destination = segue.destinationViewController as! LibrarianEditAuthorController
+            
+            destination.passAuthor(author)
+        }
     }
     
     override func viewDidLoad() {
@@ -39,4 +45,11 @@ class LibrarianShowAuthorController : UITableViewController {
         authorBirthdate.text = author.birthDate
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.title = author.name
+        authorName.text = author.name
+        authorBirthdate.text = author.birthDate
+    }
 }

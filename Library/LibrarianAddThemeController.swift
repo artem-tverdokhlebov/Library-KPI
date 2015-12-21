@@ -21,7 +21,7 @@ class LibrarianAddThemeController : UITableViewController, UITextFieldDelegate {
         var errors : [String] = [String]()
         
         if(themeTitle.text!.isEmpty) {
-            errors.append("Название тематики не должно быть пустым")
+            errors.append("Назва тематики не повинна бути порожньою")
         }
         
         if(errors.isEmpty) {
@@ -37,7 +37,7 @@ class LibrarianAddThemeController : UITableViewController, UITextFieldDelegate {
         
         theme.insertToDB()
         
-        let alert = UIAlertController(title: "Тема", message: "Тема успешно добавлена", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Тематика", message: "Тематика була успішно додана", preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in self.cancelButton(self)}
         alert.addAction(alertAction)
         presentViewController(alert, animated: true) { () -> Void in }

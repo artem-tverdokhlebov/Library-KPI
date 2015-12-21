@@ -14,11 +14,17 @@ class LibrarianShowBookController : UITableViewController {
     var authors : [Author] = [Author]()
     var themes : [Theme] = [Theme]()
     
+    @IBOutlet var bookID: UILabel!
     @IBOutlet var bookTitle: UILabel!
+    @IBOutlet var bookUDK: UILabel!
     @IBOutlet var bookAuthors: UILabel!
     
     func passBook(book : Book) {
         self.book = book
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -33,12 +39,20 @@ class LibrarianShowBookController : UITableViewController {
             
             destination.passThemes(book.getThemes() as! [Theme])
         }
+        
+        if(segue.destinationViewController is LibrarianEditBookController) {
+            let destination = segue.destinationViewController as! LibrarianEditBookController
+            
+            destination.passBook(book)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = book.title
+        bookID.text = String(book.bookID)
         bookTitle.text = book.title
+        bookUDK.text = book.udk
     }
 }

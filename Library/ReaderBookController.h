@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ReaderBookController : UITableViewController
+@property (nonatomic) int readerID;
 
 @end

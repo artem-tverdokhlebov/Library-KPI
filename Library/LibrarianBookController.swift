@@ -111,7 +111,7 @@ class LibrarianBookController : UITableViewController, UISearchBarDelegate {
     }
     
     func getResultsByTheme(query : String) {
-        data = DB.query("SELECT book.* FROM book INNER JOIN theme ON book.theme_id = theme.id WHERE theme.title LIKE '%" + query + "%'")
+        data = DB.query("SELECT book.* FROM bookTheme JOIN theme ON bookTheme.theme_id = theme.id JOIN book ON bookTheme.book_id = book.id WHERE theme.title LIKE '%" + query + "%'")
         books = [Book]()
         
         for item in data {
@@ -122,7 +122,8 @@ class LibrarianBookController : UITableViewController, UISearchBarDelegate {
     }
     
     func getResultsByAuthor(query : String) {
-        data = DB.query("SELECT * FROM book INNER JOIN author ON book.author_id = author.id WHERE author.name LIKE '%" + query + "%'")
+        data = DB.query("SELECT book.* FROM bookAuthor JOIN author ON bookAuthor.author_id = author.id JOIN book ON bookAuthor.book_id = book.id WHERE author.name LIKE '%" + query + "%'")
+        
         books = [Book]()
         
         for item in data {

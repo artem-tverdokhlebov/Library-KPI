@@ -11,4 +11,5 @@
 
 @interface ReaderShowBookController : UITableViewController
 @property (nonatomic) Book *book;
+@property (nonatomic) int readerID;
 @end

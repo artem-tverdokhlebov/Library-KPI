@@ -40,7 +40,7 @@ class LibrarianEditThemeController : UITableViewController, UITextFieldDelegate 
         var errors : [String] = [String]()
         
         if(themeTitle.text!.isEmpty) {
-            errors.append("Название тематики не должно быть пустым")
+            errors.append("Назва тематики не повинна бути порожньою")
         }
         
         if(errors.isEmpty) {

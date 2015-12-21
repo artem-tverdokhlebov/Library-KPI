@@ -11,9 +11,15 @@
 		3A3A8D741C1CB1E500656CCF /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A3A8D731C1CB1E500656CCF /* Book.m */; };
 		3A4E66131C1CA5780008E7F8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E66121C1CA5780008E7F8 /* main.m */; };
 		3A4E66161C1CA5780008E7F8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E66151C1CA5780008E7F8 /* AppDelegate.m */; };
-		3A4E66191C1CA5780008E7F8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E66181C1CA5780008E7F8 /* ViewController.m */; };
 		3A4E661C1C1CA5780008E7F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E661A1C1CA5780008E7F8 /* Main.storyboard */; };
 		3A4E66211C1CA5780008E7F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4E661F1C1CA5780008E7F8 /* LaunchScreen.storyboard */; };
+		3A5A14F31C2716B700305AC4 /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A14F21C2716B700305AC4 /* RegistrationViewController.m */; };
+		3A5A14F61C271C5800305AC4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A14F51C271C5800305AC4 /* LoginViewController.m */; };
+		3A5A14F91C272D4400305AC4 /* ReaderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A5A14F81C272D4400305AC4 /* ReaderController.m */; };
+		3AFEBFCE1C26E4FA0081E47F /* ReaderAuthorListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEBFCD1C26E4FA0081E47F /* ReaderAuthorListController.m */; };
+		3AFEBFD11C26EDA80081E47F /* ReaderThemeListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFEBFD01C26EDA80081E47F /* ReaderThemeListController.m */; };
+		AC00EAF31C270A6A00CD7252 /* LibrarianReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00EAF21C270A6A00CD7252 /* LibrarianReaderController.swift */; };
+		AC00EAF51C270F6500CD7252 /* LibrarianShowReaderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00EAF41C270F6500CD7252 /* LibrarianShowReaderController.swift */; };
 		AC1BD4FA1C1CCBBF00703479 /* LibrarianBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */; };
 		AC1BD4FC1C1CD4F100703479 /* LibrarianAuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */; };
 		AC1BD4FE1C1CD50200703479 /* LibrarianThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */; };
@@ -33,7 +39,6 @@
 		ACC03E481C221B52009C1BAB /* LibrarianShowBookController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E471C221B52009C1BAB /* LibrarianShowBookController.swift */; };
 		ACC03E4A1C2222C5009C1BAB /* LibrarianShowAuthorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */; };
 		ACC34BF61C24BAD000042977 /* ReaderShowBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BF51C24BAD000042977 /* ReaderShowBookController.m */; };
-		ACC34BFC1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BFA1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m */; };
 		ACC34C001C24BCC500042977 /* LibrarianAddThemeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */; };
 		ACC34C0C1C24C74A00042977 /* ReaderAuthorController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34C051C24C74A00042977 /* ReaderAuthorController.m */; };
 		ACC34C0D1C24C74A00042977 /* ReaderBookController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC34C071C24C74A00042977 /* ReaderBookController.m */; };
@@ -56,11 +61,21 @@
 		3A4E66121C1CA5780008E7F8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3A4E66141C1CA5780008E7F8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3A4E66151C1CA5780008E7F8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3A4E66171C1CA5780008E7F8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3A4E66181C1CA5780008E7F8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		3A4E661B1C1CA5780008E7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A4E66201C1CA5780008E7F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A4E66221C1CA5780008E7F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A5A14F11C2716B700305AC4 /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
+		3A5A14F21C2716B700305AC4 /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
+		3A5A14F41C271C5800305AC4 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3A5A14F51C271C5800305AC4 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3A5A14F71C272D4400305AC4 /* ReaderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderController.h; sourceTree = "<group>"; };
+		3A5A14F81C272D4400305AC4 /* ReaderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderController.m; sourceTree = "<group>"; };
+		3AFEBFCC1C26E4FA0081E47F /* ReaderAuthorListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderAuthorListController.h; sourceTree = "<group>"; };
+		3AFEBFCD1C26E4FA0081E47F /* ReaderAuthorListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderAuthorListController.m; sourceTree = "<group>"; };
+		3AFEBFCF1C26EDA80081E47F /* ReaderThemeListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderThemeListController.h; sourceTree = "<group>"; };
+		3AFEBFD01C26EDA80081E47F /* ReaderThemeListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderThemeListController.m; sourceTree = "<group>"; };
+		AC00EAF21C270A6A00CD7252 /* LibrarianReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianReaderController.swift; sourceTree = "<group>"; };
+		AC00EAF41C270F6500CD7252 /* LibrarianShowReaderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianShowReaderController.swift; sourceTree = "<group>"; };
 		AC1BD4F91C1CCBBF00703479 /* LibrarianBookController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianBookController.swift; sourceTree = "<group>"; };
 		AC1BD4FB1C1CD4F100703479 /* LibrarianAuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAuthorController.swift; sourceTree = "<group>"; };
 		AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianThemeController.swift; sourceTree = "<group>"; };
@@ -82,10 +97,6 @@
 		ACC03E491C2222C5009C1BAB /* LibrarianShowAuthorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianShowAuthorController.swift; sourceTree = "<group>"; };
 		ACC34BF41C24BABB00042977 /* ReaderShowBookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderShowBookController.h; sourceTree = "<group>"; };
 		ACC34BF51C24BAD000042977 /* ReaderShowBookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderShowBookController.m; sourceTree = "<group>"; };
-		ACC34BF91C24BAF700042977 /* ReaderBookThemeOrAuthorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderBookThemeOrAuthorController.h; sourceTree = "<group>"; };
-		ACC34BFA1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderBookThemeOrAuthorController.m; sourceTree = "<group>"; };
-		ACC34BFD1C24BB3200042977 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
-		ACC34BFE1C24BB3200042977 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarianAddThemeController.swift; sourceTree = "<group>"; };
 		ACC34C041C24C74A00042977 /* ReaderAuthorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderAuthorController.h; sourceTree = "<group>"; };
 		ACC34C051C24C74A00042977 /* ReaderAuthorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderAuthorController.m; sourceTree = "<group>"; };
@@ -162,18 +173,31 @@
 		3A84D5941C21FDDE00AA08B3 /* Reader */ = {
 			isa = PBXGroup;
 			children = (
+				3A5A14F71C272D4400305AC4 /* ReaderController.h */,
+				3A5A14F81C272D4400305AC4 /* ReaderController.m */,
 				ACC34C041C24C74A00042977 /* ReaderAuthorController.h */,
 				ACC34C051C24C74A00042977 /* ReaderAuthorController.m */,
+				3AFEBFCC1C26E4FA0081E47F /* ReaderAuthorListController.h */,
+				3AFEBFCD1C26E4FA0081E47F /* ReaderAuthorListController.m */,
 				ACC34C061C24C74A00042977 /* ReaderBookController.h */,
 				ACC34C071C24C74A00042977 /* ReaderBookController.m */,
 				ACC34C081C24C74A00042977 /* ReaderBookForRequestController.h */,
 				ACC34C091C24C74A00042977 /* ReaderBookForRequestController.m */,
 				ACC34C0A1C24C74A00042977 /* ReaderThemeController.h */,
 				ACC34C0B1C24C74A00042977 /* ReaderThemeController.m */,
-				ACC34BF91C24BAF700042977 /* ReaderBookThemeOrAuthorController.h */,
-				ACC34BFA1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m */,
+				3AFEBFCF1C26EDA80081E47F /* ReaderThemeListController.h */,
+				3AFEBFD01C26EDA80081E47F /* ReaderThemeListController.m */,
 				ACC34BF51C24BAD000042977 /* ReaderShowBookController.m */,
 				ACC34BF41C24BABB00042977 /* ReaderShowBookController.h */,
+			);
+			name = Reader;
+			sourceTree = "<group>";
+		};
+		AC00EAF11C27090B00CD7252 /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				AC00EAF21C270A6A00CD7252 /* LibrarianReaderController.swift */,
+				AC00EAF41C270F6500CD7252 /* LibrarianShowReaderController.swift */,
 			);
 			name = Reader;
 			sourceTree = "<group>";
@@ -210,8 +234,10 @@
 		AC31ED221C1CA5E600AF5BB8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3A4E66171C1CA5780008E7F8 /* ViewController.h */,
-				3A4E66181C1CA5780008E7F8 /* ViewController.m */,
+				3A5A14F11C2716B700305AC4 /* RegistrationViewController.h */,
+				3A5A14F21C2716B700305AC4 /* RegistrationViewController.m */,
+				3A5A14F41C271C5800305AC4 /* LoginViewController.h */,
+				3A5A14F51C271C5800305AC4 /* LoginViewController.m */,
 				ACC03E401C21E766009C1BAB /* Librarian */,
 				3A84D5941C21FDDE00AA08B3 /* Reader */,
 			);
@@ -221,11 +247,12 @@
 		ACC03E401C21E766009C1BAB /* Librarian */ = {
 			isa = PBXGroup;
 			children = (
+				AC00EAF11C27090B00CD7252 /* Reader */,
 				ACC34C011C24C0C800042977 /* Book */,
 				ACC34C021C24C0D400042977 /* Author */,
 				ACC34C031C24C11100042977 /* Theme */,
-				ACFA77E91C1DDB0500F75C8A /* LibrarianRequestController.swift */,
 				ACC03E431C21EA5C009C1BAB /* LibrarianSelectController.swift */,
+				ACFA77E91C1DDB0500F75C8A /* LibrarianRequestController.swift */,
 			);
 			name = Librarian;
 			sourceTree = "<group>";
@@ -260,8 +287,8 @@
 				AC1BD4FD1C1CD50200703479 /* LibrarianThemeController.swift */,
 				ACC34BFF1C24BCC500042977 /* LibrarianAddThemeController.swift */,
 				AC4CA19D1C262A6C00ABC8CD /* LibrarianShowThemeController.swift */,
-				AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */,
 				AC4CA1A51C26356E00ABC8CD /* LibrarianThemeListController.swift */,
+				AC4CA19F1C262DBA00ABC8CD /* LibrarianEditThemeController.swift */,
 			);
 			name = Theme;
 			sourceTree = "<group>";
@@ -344,11 +371,12 @@
 				3A3A8D741C1CB1E500656CCF /* Book.m in Sources */,
 				ACC03E461C2212FD009C1BAB /* LibrarianAddAuthorController.swift in Sources */,
 				AC1BD4FA1C1CCBBF00703479 /* LibrarianBookController.swift in Sources */,
-				3A4E66191C1CA5780008E7F8 /* ViewController.m in Sources */,
 				AC4CA19E1C262A6C00ABC8CD /* LibrarianShowThemeController.swift in Sources */,
 				ACF29E8F1C1CB3EE0011245C /* Reader.swift in Sources */,
 				AC1BD4FE1C1CD50200703479 /* LibrarianThemeController.swift in Sources */,
+				3AFEBFD11C26EDA80081E47F /* ReaderThemeListController.m in Sources */,
 				ACC34C181C24C76000042977 /* Ticket.m in Sources */,
+				3A5A14F31C2716B700305AC4 /* RegistrationViewController.m in Sources */,
 				AC4CA1A21C26353300ABC8CD /* LibrarianBookListController.swift in Sources */,
 				ACC34C0F1C24C74A00042977 /* ReaderThemeController.m in Sources */,
 				ACC03E421C21E788009C1BAB /* LibrarianAddBookController.swift in Sources */,
@@ -358,21 +386,25 @@
 				AC1BD4FC1C1CD4F100703479 /* LibrarianAuthorController.swift in Sources */,
 				ACC34C161C24C76000042977 /* Card.m in Sources */,
 				ACC34C0E1C24C74A00042977 /* ReaderBookForRequestController.m in Sources */,
+				3AFEBFCE1C26E4FA0081E47F /* ReaderAuthorListController.m in Sources */,
 				AC4CA1AA1C26362B00ABC8CD /* LibrarianEditAuthorController.swift in Sources */,
 				AC4CA1A41C26355D00ABC8CD /* LibrarianAuthorListController.swift in Sources */,
 				ACC34C0C1C24C74A00042977 /* ReaderAuthorController.m in Sources */,
 				AC4CA1A61C26356E00ABC8CD /* LibrarianThemeListController.swift in Sources */,
 				AC4CA1A01C262DBA00ABC8CD /* LibrarianEditThemeController.swift in Sources */,
 				ACC03E481C221B52009C1BAB /* LibrarianShowBookController.swift in Sources */,
+				AC00EAF51C270F6500CD7252 /* LibrarianShowReaderController.swift in Sources */,
 				AC31ED1F1C1CA5B000AF5BB8 /* DB.swift in Sources */,
 				3A4E66161C1CA5780008E7F8 /* AppDelegate.m in Sources */,
+				3A5A14F91C272D4400305AC4 /* ReaderController.m in Sources */,
 				ACC34C0D1C24C74A00042977 /* ReaderBookController.m in Sources */,
 				ACC34BF61C24BAD000042977 /* ReaderShowBookController.m in Sources */,
 				3A4E66131C1CA5780008E7F8 /* main.m in Sources */,
+				AC00EAF31C270A6A00CD7252 /* LibrarianReaderController.swift in Sources */,
+				3A5A14F61C271C5800305AC4 /* LoginViewController.m in Sources */,
 				ACC34C001C24BCC500042977 /* LibrarianAddThemeController.swift in Sources */,
 				ACC03E441C21EA5C009C1BAB /* LibrarianSelectController.swift in Sources */,
 				ACF29E8D1C1CB3A00011245C /* Theme.swift in Sources */,
-				ACC34BFC1C24BAF700042977 /* ReaderBookThemeOrAuthorController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +415,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A4E661B1C1CA5780008E7F8 /* Base */,
-				ACC34BFD1C24BB3200042977 /* uk */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -392,7 +423,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A4E66201C1CA5780008E7F8 /* Base */,
-				ACC34BFE1C24BB3200042977 /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -498,7 +528,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Library-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -517,7 +547,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Library/Library-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = 2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

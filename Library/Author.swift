@@ -34,9 +34,21 @@ import Foundation
 
     func insertToDB() {
         DB.query("INSERT INTO author VALUES('', '\(name)', '\(birthDate)')");
+        
+        let data : NSArray = DB.query("SELECT id FROM author ORDER BY id DESC LIMIT 1")
+        self.author_id = Int(data[0]["id"] as! String)!
+    }
+    
+    func updateInDB() {
+        DB.query("UPDATE author SET name = '\(self.name)', birthDate = '\(self.birthDate)' WHERE id = \(self.author_id)")
     }
     
     func deleteFromDB() {
         DB.query("DELETE FROM author WHERE id = \(self.author_id)")
+    }
+    
+    func reloadFromDB() {
+        let data : NSArray = DB.query("SELECT author.* FROM author WHERE id = \(self.author_id)")
+        self.parseFromDictionary(data[0] as! NSDictionary)
     }
 }

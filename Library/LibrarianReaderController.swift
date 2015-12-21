@@ -1,30 +1,28 @@
 //
-//  LibrarianAuthorController.swift
+//  LibrarianReaderController.swift
 //  Library
 //
-//  Created by Artem Tverdokhlebov on 13.12.15.
+//  Created by Artem Tverdokhlebov on 12/20/15.
 //  Copyright © 2015 Leonid Humeniuk & Artem Tverdokhlebov. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
+class LibrarianReaderController : UITableViewController {
     var data : NSArray = NSArray()
-    var authors : [Author] = [Author]()
-    
-    @IBOutlet var searchBar: UISearchBar!
+    var readers : [Reader] = [Reader]()
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return authors.count
+        return readers.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let authorCell = tableView.dequeueReusableCellWithIdentifier("authorCell", forIndexPath: indexPath)
+        let readerCell = self.tableView.dequeueReusableCellWithIdentifier("readerCell", forIndexPath: indexPath)
         
-        authorCell.textLabel!.text = authors[indexPath.row].name
+        readerCell.textLabel!.text = readers[indexPath.row].name
         
-        return authorCell
+        return readerCell
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -37,10 +35,9 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?  {
         let deleteAction = UITableViewRowAction(style: .Default, title: "Видалити", handler: { (action , indexPath) -> Void in
-            self.authors[indexPath.row].deleteFromDB()
-            self.authors.removeAtIndex(indexPath.row)
+            self.readers[indexPath.row].deleteFromDB()
+            self.readers.removeAtIndex(indexPath.row)
             self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            
         })
         
         deleteAction.backgroundColor = UIColor.redColor()
@@ -58,35 +55,8 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func getResultsByName(query : String) {
-        if(query != "") {
-            data = DB.query("SELECT * FROM author WHERE name LIKE '%\(query)%'")
-        } else {
-            data = DB.query("SELECT * FROM author")
-        }
-        authors = [Author]()
-        
-        for item in data {
-            let author : Author = Author()
-            author.parseFromDictionary(item as! [NSObject : AnyObject])
-            authors.append(author)
-        }
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
-        getResultsByName(searchBar.text! as String)
-        
-        tableView.reloadData()
-    }
-    
     @IBAction func refresh(sender: AnyObject) {
-        if(searchBar.text!.isEmpty) {
-            loadAuthors()
-        } else {
-            getResultsByName(searchBar.text! as String)
-        }
+        self.loadReaders()
         
         tableView.reloadData()
         
@@ -96,34 +66,23 @@ class LibrarianAuthorController : UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func loadAuthors() {
-        authors = [Author]()
+    func loadReaders() {
+        readers = [Reader]()
         
-        data = DB.query("SELECT * FROM author")
+        data = DB.query("SELECT * FROM reader")
         
         for item in data {
-            let author : Author = Author()
-            author.parseFromDictionary(item as! [NSObject : AnyObject])
-            authors.append(author)
-        }
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.destinationViewController is LibrarianShowAuthorController) {
-            let destination = segue.destinationViewController as! LibrarianShowAuthorController
-            
-            destination.passAuthor(authors[tableView.indexPathForSelectedRow!.row])
+            let reader : Reader = Reader()
+            reader.parseFromDictionary(item as! [NSObject : AnyObject])
+            readers.append(reader)
         }
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
-        searchBar.delegate = self
         
-        loadAuthors()
+        loadReaders()
     }
     
 }

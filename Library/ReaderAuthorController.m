@@ -12,9 +12,10 @@
 
 
 @interface ReaderAuthorController () <UISearchBarDelegate>
-@property (nonatomic) NSArray *data;
+
 @property (nonatomic) NSMutableArray <Author *> *authors;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
 
 @end
 @implementation ReaderAuthorController
@@ -24,6 +25,12 @@
     }
     return _authors;
 }
+-(NSArray *)data{
+    if(!_data){
+        _data = [DB query:@"SELECT * FROM author"];
+    }
+    return _data;
+}
 
 -(void)viewDidLoad{
     [super viewDidLoad];
@@ -31,14 +38,35 @@
     self.tableView.dataSource = self;
     self.searchBar.delegate = self;
     
-    self.data = [DB query:@"SELECT * FROM author"];
-    for (NSObject *item in self.data) {
+        for (NSObject *item in self.data) {
         Author *author = [Author new];
         [author parseFromDictionary:(NSDictionary *)item];
         [self.authors addObject:author];
     }
     [self.tableView reloadData];
 }
+
+-(void)loadAuthors{
+    self.authors = [@[] mutableCopy];
+    self.data = [DB query:@"SELECT * FROM author"];
+    for (NSObject *item in self.data) {
+        Author *author = [Author new];
+        [author parseFromDictionary:(NSDictionary *)item];
+        [self.authors addObject:author];
+    }
+}
+- (IBAction)refresh:(id)sender {
+  
+    [self loadAuthors];
+    
+    [self.tableView reloadData];
+    
+    if (self.refreshControl.refreshing){
+        [self.refreshControl endRefreshing];
+    }
+
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"clientAuthorCell" forIndexPath:indexPath];

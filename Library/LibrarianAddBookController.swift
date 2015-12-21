@@ -61,19 +61,19 @@ class LibrarianAddBookController : UITableViewController,UITextFieldDelegate {
         var errors : [String] = [String]()
         
         if(bookTitle.text!.isEmpty) {
-            errors.append("Название книги не должно быть пустым")
+            errors.append("Назва книги не повинна бути порожньою")
         }
         
         if(authors.isEmpty) {
-            errors.append("Книга должна иметь как минимум 1 автора")
+            errors.append("Книга повинна мати як мінімум 1 автора")
         }
         
         if(themes.isEmpty) {
-            errors.append("Книга должна иметь как минимум 1 тему")
+            errors.append("Книга повинна мати як мінімум 1 тематику")
         }
         
         if(bookUDK.text!.isEmpty) {
-            errors.append("УДК книги не должен быть пустым")
+            errors.append("УДК книги не повинен бути порожнім")
         }
         
         if(errors.isEmpty) {
@@ -87,7 +87,9 @@ class LibrarianAddBookController : UITableViewController,UITextFieldDelegate {
         let book : Book = Book()
         book.title = bookTitle.text
         book.udk = bookUDK.text
-            
+        
+        book.insertToDB()
+        
         for theme in themes {
             book.connectToTheme(theme)
         }
@@ -96,9 +98,7 @@ class LibrarianAddBookController : UITableViewController,UITextFieldDelegate {
             book.connectToAuthor(author)
         }
             
-        book.insertToDB()
-            
-        let alert = UIAlertController(title: "Добавлено", message: "Книга была успешно добавлена", preferredStyle: UIAlertControllerStyle.Alert)
+        let alert = UIAlertController(title: "Книга", message: "Книга була успішно додана", preferredStyle: UIAlertControllerStyle.Alert)
         let alertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in self.cancelButton(self)}
         alert.addAction(alertAction)
         presentViewController(alert, animated: true) { () -> Void in }

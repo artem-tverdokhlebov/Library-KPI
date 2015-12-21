@@ -11,7 +11,6 @@
 @interface Book : NSObject
 @property (nonatomic) NSString *title;
 @property (nonatomic) int bookID;
-//@property (nonatomic) int inventoryNumber;
 @property (nonatomic) NSString *udk;
 @property (nonatomic) int cardID;
 
@@ -27,3 +26,4 @@
 
 //TODO: getCard()
 //TODO: setCard(Card)
+//TODO: updateInDB()

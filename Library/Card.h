@@ -14,4 +14,7 @@
 
 -(void)parseFromDictionary:(NSDictionary *)dictionary;
 
+// TODO: insertToDB() 2 запроса? 1 на вставку, другой на получение последнего ид в таблице и присвоение
+// TODO: deleteFromDB()
+
 @end
